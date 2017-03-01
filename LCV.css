@@ -118,20 +118,30 @@ body {
 
 
 .logo_header {
-	z-index: 1;
+	z-index: 2;
 	position: absolute;
 }
 
 h1 {
 	font-family: 'plaza';
 	color: white;
-	position: absolute;
-	display: block;
 	text-align: center;
+	top: 45%;
+	width: 100%;
+	font-size: calc(14px + 4vw);
+}
+.titreh1 {
+	position: absolute;
+	z-index: 1;
+
 
 }
-.bgheader {
+.fond-header {
+	text-align: center;
 	position: relative;
+}
+.bgheader {
+	/*position: relative;*/
 }
 
 #bs-example-navbar-collapse-1 {
@@ -139,4 +149,18 @@ h1 {
 }
 .navbar {
 	font-family: 'plaza';
+}
+.header-button {
+	position: absolute;
+}
+@media only screen and (max-width: 1000px) {
+    .logo_header {
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .logo_header {
+        width: 20%;
+        min-width: 80px;
+    }
 }

@@ -178,4 +178,12 @@ h1 {
 .carousel-control.right, .carousel-control.left{
 	background-image: none!important;
 }
+.info-footer button{
+	margin:5px 0px;
+	height: 40px;
+	width: 40px;
 
+}
+footer{
+	margin-top: 20px;
+}

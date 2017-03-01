@@ -18,11 +18,25 @@ body {
 .carte p {
 	text-align: left;
 }
-.cartecaroussel {
+
+.caroussel-inner{
+	height: 250px;
+}
+
+.formulecarousel {
 	font-family: 'plaza';
+	text-align: center;
+
+}
+.formule {
+	font-family: 'plaza';
+	text-align: center;
+	padding: 40px 10px;
 }
 #prix {
 	float: : right;
+	text-align: right;
+	margin: 0px;
 }
 .img-center{
 	display: block;

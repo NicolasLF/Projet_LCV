@@ -2,3 +2,10 @@ body {
     background-image: url("Images/purty_wood.png");
     background-repeat: repeat;
 }
+.img-center{
+	display: block;
+	margin: 0px auto;
+}
+.bg-green {
+	background-color : #a0cc3b !important;
+}

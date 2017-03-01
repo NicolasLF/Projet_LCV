@@ -34,6 +34,25 @@ body {
 }
 
 .logo_header {
-	height: 100px;
-	width: 100px;
+	z-index: 1;
+	position: absolute;
+}
+
+h1 {
+	font-family: 'plaza';
+	color: white;
+	position: absolute;
+	display: block;
+	text-align: center;
+
+}
+.bgheader {
+	position: relative;
+}
+
+#bs-example-navbar-collapse-1 {
+	text-align: center;
+}
+.navbar {
+	font-family: 'plaza';
 }

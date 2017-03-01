@@ -62,7 +62,10 @@
 
 <!-- End header -->
 <!-- Qui sommes nous? -->
-
+		<div id="sec1" class="separate-container">
+			<span>QUI SOMMES NOUS ?</span>
+			<div class="separate"></div>
+		</div>
 		<section id="concept" class="container-fluid">
 			<div class="row">
 				<div class="col-xs-8">
@@ -83,35 +86,43 @@
 		</section>
 <!-- End Qui sommes nous? -->
 <!-- Formules -->
+		<div id="sec2" class="separate-container">
+			<span>NOS FORMULES</span>
+			<div class="separate"></div>
+		</div>
 		<section id="formules" class="container-fluid">
 		<!-- Visible pour tablette et + -->
 			<div class="row hidden-xs">
 				<div class="col-md-3 col-sm-6">
-					<div class="content">
-						<p>La faim de la route <br />
-			     		Bagel ou Kimpab + boisson
-			     		<span class="prix formules"> 7,60€</span></p>
+					<div class="content formule">
+						<h2>Formule <br />
+						La faim de la route <br /></h2>
+			     		<p>Bagel ou Kimpab + boisson<br />
+			     		<big>7,60€</big></p>
 					</div>
 				</div>	
 				<div class="col-md-3 col-sm-6">
-					<div class="content">
-						<p>La faim du voyage <br />
-				     	Bagel + petite salade ou chips + boisson
-				     	<span class="prix formules"> 8,60€</span></p>
+					<div class="content formule">
+						<h2>Formule <br />
+						La faim du voyage <br /></h2>
+				     	<p>Bagel + petite salade ou chips + boisson<br />
+				     	<big> 8,60€</big></p>
 				     </div>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="content">
-						<p>Une faim de loup <br />
-			     		Bagel + dessert + boisson
-			     		<span class="prix formules"> 10€</span></p>
+					<div class="content formule">
+						<h2>Formule <br />
+						Une faim de loup <br /></h2>
+			     		<p>Bagel + dessert + boisson<br />
+			     		<big> 10€</big></p>
 				    </div>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="content">	
-						<p>La faim du monde <br />
-			     		Bagel + petite salade ou chips + dessert + boisson
-			     		<span class="prix formules"> 11,50€</span></p>
+					<div class="content formule">	
+						<h2>Formule <br />
+						La faim du monde <br /></h2>
+			     		<p>Bagel + petite salade ou chips + dessert + boisson<br />
+			     		<big> 11,50€</big></p>
 			     	</div>
 			    </div> 
 			</div>
@@ -130,40 +141,36 @@
 
 			  			<div class="carousel-inner" role="listbox">
 
-			   				<div class="item active cartecaroussel">
-			     				<div class="carousel-content formule">
-			     					<div>
-			     						<p>La faim de la route <br />
-			     						Bagel ou Kimpab + boisson
-			     						<span class="prix formules"> 7,60€</span></p>
-			      					</div>
+			   				<div class="item active">
+			     				<div class="carousel-content formulecarousel">
+			     					<h2>Formule <br />
+									La faim de la route <br /></h2>
+			     					<p>Bagel ou Kimpab + boisson<br />
+			     					<big>7,60€</big></p>
 			      				</div>
 			    			</div>
 			    			<div class="item">
-			      				<div class="carousel-content formule">
-			     					<div>
-			     						<p>La faim du voyage <br />
-			     						Bagel + petite salade ou chips + boisson
-			     						<span class="prix formules"> 8,60€</span></p>
-				      				</div>
+			      				<div class="carousel-content formulecarousel">
+			     					<h2>Formule <br />
+									La faim du voyage <br /></h2>
+				     				<p>Bagel + petite salade ou chips + boisson<br />
+				     				<big> 8,60€</big></p>
 				   				</div>
 				   			</div>	
 				    		<div class="item">
-			      				<div class="carousel-content formule">
-			     					<div>
-			     						<p>Une faim de loup <br />
-			     						Bagel + dessert + boisson
-			     						<span class="prix formules"> 10€</span></p>
-				      				</div>
+			      				<div class="carousel-content formulecarousel">
+			     					<h2>Formule <br />
+									Une faim de loup <br /></h2>
+			     					<p>Bagel + dessert + boisson<br />
+			     					<big> 10€</big></p>
 				   				</div>
 				   			</div>
 				   			<div class="item">
-			      				<div class="carousel-content formule">
-			      					<div>
-			     						<p>La faim du monde<br />
-			     						Bagel + petite salade ou chips + dessert + boisson
-			     						<span class="prix formules"> 11,50€</span></p>
-				      				</div>
+			      				<div class="carousel-content formulecarousel">
+			      					<h2>Formule <br />
+									La faim du monde <br /></h2>
+			     					<p>Bagel + petite salade ou chips + dessert + boisson<br />
+			     					<big> 11,50€</big></p>
 				      			</div>	
 				   			</div>
 				 		</div>
@@ -182,8 +189,13 @@
 		</section>
 <!-- End Formules -->
 <!-- Bagels -->
-
-		<section id="bagels" class="container-fluid bg-green">
+		<div id="sec3" class="separate-container">
+			<span>BAGELS 6.60€</span>
+			<div class="separate"></div>
+		</div>
+		
+		<section id="bagels" class="bg-green">
+			
 
 		<!-- Visible pour tablette et + -->
 			<div class="row hidden-xs">
@@ -210,7 +222,7 @@
 
 			<!-- Visible pour smartphone -->
 			<div class="visible-xs-block">
-				<div class="bg-green" id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<div id="carousel-example-generic" class="carousel slide bg-green" data-ride="carousel">
 				  <!-- Indicators -->
 					<ol class="carousel-indicators">
 						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -254,9 +266,7 @@
 					    	</div>
 					    </div>
 					    <div class="item">
-
 					    	<img class="img-responsive img-center" src="Images/Bagel6.jpg" alt="">
-
 					    	<div class="carousel-caption">
 				
 					    	</div>
@@ -278,50 +288,82 @@
 		</section>
 <!-- End Bagels -->
 <!-- Menu -->
+		<div id="sec4" class="separate-container">
+			<span>MENU</span>
+			<div class="separate"></div>
+		</div>
 		<section id="menus" class="container-fluid">
 			<div class="row">
-				<div class="col-md-6 carte">
-				  	<h2> Rolls, salades & Co</h2>
-				  		<p>Chicken Rolls <small>(poulet teriyaki, avocat, concombre)</small>
-				  		<span class="prix"> 4,50€</span></p>
-				  		<p>Thon thon Rolls <small>(thonade, avocat, concombre)</small>
-				  		<span class="prix"> 5,00€</span><p>
-				  		<p>Rock'n'rolls
-				  		<span class="prix"> 5,00€</span></p>
-					  	<p>Kimbap <small>(thonade, carotte, concombre, oeuf, radis)</small>
-					  	<span class="prix"> 6,60€</span></p>
-					  	<p>Mandu <small>(ravioli coréen)</small> X6
-					  	<span class="prix"> 2,50€</span></p>
-					  	<p>Petite salade <small>(coleslaw, grecque)</small>
-					  	<span class="prix"> 2,00€</span></p>
-					  	<p>Grande salade <small>(coleslaw, grecque)</small>
-					  	<span class="prix"> 4,00€</p>
-					  	<p>Chips
-					  	<span class="prix"> 1,50€</span></p>
+				<div class="col-md-6 col-xs-12 carte">
+					<h2> Rolls, salades & Co</h2>
+						<div class="container-fluid">			
+							<div class="row">
+								<div class="col-xs-10 carte">
+								  	<p>Chicken Rolls <small>(poulet teriyaki, avocat, concombre)</small><br />
+								  	Thon thon Rolls <small>(thonade, avocat, concombre)</small><br />
+								  	Rock'n'rolls <small>(saumon, avocat, concombre)</small><br />
+									Kimbap <small>(thonade, carotte, concombre, oeuf, radis)</small><br />
+									Mandu <small>(ravioli coréen)</small> X6<br />
+									Petite salade <small>(coleslaw, grecque)</small><br />
+									Grande salade <small>(coleslaw, grecque)</small><br />
+									Chips</p>
+								</div>	
+								<div class="col-xs-2 carte">
+									<p>4,50€<br />
+									4,50€<br />
+									5,00€<br />
+									6,60€<br />
+									2,50€<br />
+									2,00€<br />
+									4,00€<br />
+									1,50€<br /></p>
+								</div>
+							</div>		
+						</div>			
 				</div>
-				<div class="col-md-6 carte">
+				<div class="col-md-6 col-xs-12 carte">				
 					<h2>Desserts</h2>
-						<p>Cheesecake maison
-						<span class="prix"> 3,50€</span></p>
-						<p>Muffin (bleuberry, pépites de chocolat)
-						<span class="prix"> 2,70€</span></p>
-						<p>Cookies (pépites de chocolat, tout chocolat)		
-						<span class="prix"> 2,50€</p>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-10 carte">
+									<p>Cheesecake maison<br />
+									Muffin (bleuberry, pépites de chocolat)<br />
+									Cookies (pépites de chocolat, tout chocolat)<br />		
+									</p>
+								</div>
+								<div class="col-xs-2 carte">
+									<p>3,50€<br />
+									2,70€<br />
+									2,50€<br />
+									</p>
+								</div>
+							</div>
+						</div>
 					<h2>Boissons</h2>
-						<p>Sodas 33 cl, eau 50 cl
-					  	<span class="prix"> 1,50€</span></p>
-						<p>Expresso
-					  	<span class="prix"> 1,50€</span></p>
-				</div>
-				
-
-
-
-		  	</div>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-10 carte">
+									<p>Sodas 33 cl, eau 50 cl<br />
+									Expresso<br />
+									</p>
+								</div>
+								<div class="col-xs-2 carte">
+									<p>1,50 €<br />
+									1,50€<br />
+									</p>
+								</div>
+							</div>
+						</div>	
+		  		</div>
 
 		</section>
 <!-- End Menu -->
 <!-- Map -->
+		<div id="sec5" class="separate-container">
+			<span>OU NOUS TROUVER ?</span>
+			<div class="separate"></div>
+		</div>
+
 		<section id="ou">
 			<div>
 				<iframe width="100%" height="300px" frameBorder="0" src="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_130257?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p><a href="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_130257">Voir en plein écran</a></p>
@@ -350,6 +392,54 @@
 			</div>
 		</section>
 <!-- End Image -->
+<!-- menu fixed right -->
+<!-- Start vertical navigation -->
+<div id="op-verticalnav">
+	<ul class="op-sectionlist">
+		<li class="op-v-item">
+			<a class="op-v-link js-scrollTo" href="#sec1">
+				<span class="v-marker"></span>
+				<span class="op-v-itemdesc">
+					<span class="op-v-itembg">Section 1</span>
+				</span>
+			</a>
+		</li>
+		<li class="op-v-item">
+			<a class="op-v-link js-scrollTo" href="#sec2">
+				<span class="v-marker"></span>
+				<span class="op-v-itemdesc">
+					<span class="op-v-itembg">Section 2</span>
+				</span>
+			</a>
+		</li>
+		<li class="op-v-item">
+			<a class="op-v-link js-scrollTo" href="#sec3">
+				<span class="v-marker"></span>
+				<span class="op-v-itemdesc">
+					<span class="op-v-itembg">Section 3</span>
+				</span>
+			</a>
+		</li>
+		<li class="op-v-item">
+			<a class="op-v-link js-scrollTo" href="#sec4">
+				<span class="v-marker"></span>
+				<span class="op-v-itemdesc">
+					<span class="op-v-itembg">Section 4</span>
+				</span>
+			</a>
+		</li>
+		<li class="op-v-item">
+			<a class="op-v-link js-scrollTo" href="#sec5">
+				<span class="v-marker"></span>
+				<span class="op-v-itemdesc">
+					<span class="op-v-itembg">Section 5</span>
+				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- end vertical navigation -->
+<!-- End menu fixed right -->
 <!-- Footer -->
 		<footer>
 			<div class="row">
@@ -462,6 +552,16 @@
 <!-- End Footer -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.js-scrollTo').on('click', function() { // Au clic sur un élément
+			var page = $(this).attr('href'); // Page cible
+			var speed = 750; // Durée de l'animation (en ms)
+			$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+			return false;
+		});
+	});
+</script>
 	
 	</body>
 

@@ -18,11 +18,25 @@ body {
 .carte p {
 	text-align: left;
 }
-.cartecaroussel {
+
+.caroussel-inner{
+	height: 250px;
+}
+
+.formulecarousel {
 	font-family: 'plaza';
+	text-align: center;
+
+}
+.formule {
+	font-family: 'plaza';
+	text-align: center;
+	padding: 40px 10px;
 }
 #prix {
 	float: : right;
+	text-align: right;
+	margin: 0px;
 }
 .img-center{
 	display: block;
@@ -30,8 +44,78 @@ body {
 }
 .bg-green {
 	background-color : #a0cc3b !important;
+}
+.separate{
+	background-image: url('Images/separate.png');
+	background-repeat: repeat-x;
+	height: 15px;
+	margin: 0 auto 20px auto;
+	
+}
+.separate-container{
+	margin-top: 15px;
+	text-align: center;
+}
+.separate-container span{
 
 }
+/*== V nav ==*/
+#op-verticalnav {
+	position:fixed; 
+	top:0; 
+	right:0; 
+	left: auto;
+	height: 100%;
+	display:table
+}
+#op-verticalnav .op-sectionlist {
+	height:100%; 
+	text-align:center; 
+	display:table-cell; 
+	vertical-align:middle
+}
+#op-verticalnav .op-v-item {
+	display:block
+}
+#op-verticalnav .op-v-link {
+	display:block; 
+	margin:12px 0
+}
+#op-verticalnav .v-marker {
+	width:10px; 
+	height:10px; 
+	border-radius:50%; 
+	background-color:#ea7e27; 
+	display:inline-block; 
+	vertical-align:middle; 
+	margin-bottom:-2px; 
+	margin-right:10px;
+	border: 1px solid #ec6f09;
+}
+#op-verticalnav .op-v-link:hover .v-marker, #op-verticalnav .op-v-item .op-v-link.active .v-marker {
+	background-color:#ba5300; 
+}
+#op-verticalnav .op-v-itemdesc {
+	display:inline-block; 
+	font-size:14px; 
+	position:absolute; 
+	white-space:nowrap; 
+	line-height:normal; 
+	padding:0 34px 0 0;
+	vertical-align:middle
+}
+#op-verticalnav .op-v-itemdesc .op-v-itembg{
+	display:inline-block; 
+	background-color:rgba(0,0,0,.5); 
+	color:#fff; 
+	padding:4px 10px 6px 10px; 
+	border:1px solid rgba(160,160,160,.2); 
+	border-radius:4px; 
+}
+#op-verticalnav .op-v-link:hover .op-v-itemdesc {
+	right:0px; 
+}
+
 
 .logo_header {
 	z-index: 1;

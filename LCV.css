@@ -8,6 +8,11 @@ body {
 	font-family: 'plaza';
 	src: url('fonts/plaza.ttf');
 }
+.titres-sections {
+	font-family: 'plaza';
+	font-size: 50px;
+	color: #ff831d;
+}
 
 .carte {
 	font-family: 'plaza';}
@@ -59,6 +64,11 @@ body {
 .separate-container span{
 margin-bottom: 10px;
 }
+
+.insta div {
+padding: 0px;
+}
+
 /*== V nav ==*/
 #op-verticalnav {
 	position:fixed; 

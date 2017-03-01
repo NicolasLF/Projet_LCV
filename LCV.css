@@ -8,6 +8,11 @@ body {
 	font-family: 'plaza';
 	src: url('fonts/plaza.ttf');
 }
+.titres-sections {
+	font-family: 'plaza';
+	font-size: 50px;
+	color: #ff831d;
+}
 
 .carte {
 	font-family: 'plaza';}
@@ -49,7 +54,7 @@ body {
 	background-image: url('Images/separate.png');
 	background-repeat: repeat-x;
 	height: 15px;
-	margin: 0 auto 20px auto;
+	margin-bottom: 4px;
 	
 }
 .separate-container{
@@ -57,8 +62,13 @@ body {
 	text-align: center;
 }
 .separate-container span{
-
+margin-bottom: 10px;
 }
+
+.insta div {
+padding: 0px;
+}
+
 /*== V nav ==*/
 #op-verticalnav {
 	position:fixed; 
@@ -150,6 +160,7 @@ h1 {
 .navbar {
 	font-family: 'plaza';
 }
+
 .header-button {
 	position: absolute;
 }
@@ -164,3 +175,7 @@ h1 {
         min-width: 80px;
     }
 }
+.carousel-control.right, .carousel-control.left{
+	background-image: none!important;
+}
+

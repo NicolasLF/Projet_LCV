@@ -17,7 +17,16 @@ body {
 .carte p {
 	text-align: left;
 }
-.cartecaroussel {
+
+.hidden-xs {
+	height: 250px;
+
+}
+
+.formulecarousel {
+	font-family: 'plaza';
+}
+.formule {
 	font-family: 'plaza';
 }
 #prix {

@@ -30,6 +30,18 @@ body {
 }
 .bg-green {
 	background-color : #a0cc3b !important;
+}
+.separate{
+	background-image: url('Images/separate.png');
+	background-repeat: repeat-x;
+	height: 15px;
+	margin: 0 auto 20px auto;
+	
+}
+.separate-container{
+	margin-top: 15px;
+	text-align: center;
+}
+.separate-container span{
 
 }
-

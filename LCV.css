@@ -17,10 +17,12 @@ body {
 .carte p {
 	text-align: left;
 }
-
+.cartecaroussel {
+	font-family: 'plaza';
+}
 #prix {
 	float: : right;
-
+}
 .img-center{
 	display: block;
 	margin: 0px auto;

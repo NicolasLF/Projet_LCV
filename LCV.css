@@ -8,6 +8,11 @@ body {
 	font-family: 'plaza';
 	src: url('fonts/plaza.ttf');
 }
+.titres-sections {
+	font-family: 'plaza';
+	font-size: 50px;
+	color: #ff831d;
+}
 
 .carte {
 	font-family: 'plaza';}
@@ -59,3 +64,7 @@ body {
 .separate-container span{
 
 }
+.insta div {
+padding: 0px;
+}
+

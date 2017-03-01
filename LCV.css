@@ -1,8 +1,35 @@
-/*header {
 
-	background-image: url("Images/Bagel_Header.jpg");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	height: 800px;
+body {
+    background-image: url("Images/purty_wood.png");
+    background-repeat: repeat;
+}
 
-}*/
+@font-face {
+	font-family: 'plaza';
+	src: url('fonts/plaza.ttf');
+}
+
+.carte {
+	font-family: 'plaza';}
+
+.carte h2 {
+
+}
+.carte p {
+	text-align: left;
+}
+.cartecaroussel {
+	font-family: 'plaza';
+}
+#prix {
+	float: : right;
+}
+.img-center{
+	display: block;
+	margin: 0px auto;
+}
+.bg-green {
+	background-color : #a0cc3b !important;
+
+}
+

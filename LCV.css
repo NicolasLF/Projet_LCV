@@ -42,10 +42,14 @@ body {
 	font-weight: bold;
 
 }
+.formule h2{
+	font-family: 'plaza';
+	text-align: center;
+	font-weight: bold;
+}
 .formule {
 	font-family: 'plaza';
 	text-align: center;
-	padding: 40px 10px;
 }
 .container-fluid p {
 	font-family: 'plaza';

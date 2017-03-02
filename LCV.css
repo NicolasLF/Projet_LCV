@@ -16,15 +16,22 @@ body {
 }
 
 .carte {
-	font-family: 'plaza';}
-
-.carte h2 {
-
+	font-family: 'plaza';
 }
+
 .carte p {
 	text-align: left;
 }
-
+.prix p {
+	text-align:right;
+	font-weight:bolder;
+}
+.prix-formule {
+		font-weight:bolder;
+}
+.glyphicon-leaf {
+	color:#008000;
+}
 .caroussel-inner{
 	height: 250px;
 }
@@ -40,12 +47,8 @@ body {
 	text-align: center;
 	padding: 40px 10px;
 }
-#prix {
-	float: : right;
-	text-align: right;
-	margin: 0px;
-}
-p {
+.container-fluid p {
+	font-family: 'plaza';
 	font-size: large;
 	font-weight: bold;
 }
@@ -186,7 +189,7 @@ h1 {
     }
     .navbar {
     	font-size: 14px;
-}
+}}
 @media only screen and (max-width: 500px) {
     .logo_header {
         width: 20%;
@@ -196,10 +199,27 @@ h1 {
 .carousel-control.right, .carousel-control.left{
 	background-image: none!important;
 }
+.logo img-responsive {
+	max-width: 200px;	
+}
 .info-footer button{
 	margin:5px 0px;
 	height: 40px;
 	width: 40px;
+	background-color: transparent;
+}
+.info-footer {
+	font-family: 'plaza';
+	color:#222222;
+}
+.list-group-item {
+	border: none;
+	background-color: transparent;
+}
+.contact {
+	font-family: 'plaza';
+	color:#222222;
+
 }
 .concept{
 	font-family: 'plaza';
@@ -208,7 +228,10 @@ h1 {
 	text-align: center
 
 }
+.insta {
+	margin-top: 20px!important;
+	margin-bottom: 20px!important;
+}
 footer{
 	margin-top: 20px;
-
 }

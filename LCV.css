@@ -254,7 +254,6 @@ margin: auto;
 .contact {
 	font-family: 'plaza';
 	color:#222222;
-
 }
 .text-concept{
 	font-family: 'plaza';
@@ -341,4 +340,7 @@ footer h3{
 .cam5{
 	top: 3100px;
 	left: 1400px;
+}
+.titre-food-truck{
+	font-weight: bold;
 }

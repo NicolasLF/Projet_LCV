@@ -12,6 +12,7 @@ body {
 	font-family: 'plaza';
 	font-size: 50px;
 	color: #ff831d;
+	font-weight: bold;
 }
 
 .carte {
@@ -31,6 +32,7 @@ body {
 .formulecarousel {
 	font-family: 'plaza';
 	text-align: center;
+	font-weight: bold;
 
 }
 .formule {
@@ -42,6 +44,10 @@ body {
 	float: : right;
 	text-align: right;
 	margin: 0px;
+}
+p {
+	font-size: large;
+	font-weight: bold;
 }
 .img-center{
 	display: block;
@@ -190,10 +196,19 @@ h2 {
 .carousel-control.right, .carousel-control.left{
 	background-image: none!important;
 }
-
+.info-footer button{
+	margin:5px 0px;
+	height: 40px;
+	width: 40px;
+}
 .concept{
 	font-family: 'plaza';
 	font-size: 14px;
 	color: #ff831d;
 	text-align: center
+
+}
+footer{
+	margin-top: 20px;
+
 }

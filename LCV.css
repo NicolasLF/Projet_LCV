@@ -136,15 +136,23 @@ h1 {
 	font-family: 'plaza';
 	color: white;
 	text-align: center;
-	top: 45%;
+	top: 25%;
 	width: 100%;
 	font-size: calc(14px + 4vw);
-}
-.titreh1 {
 	position: absolute;
 	z-index: 1;
-
-
+	text-shadow: 10px 6px 6px black;
+}
+h2 {
+	font-family: 'plaza';
+	color: white;
+	text-align: center;
+	top: 40%;
+	width: 100%;
+	font-size: calc(10px + 2vw);
+	position: absolute;
+	z-index: 1;
+	text-shadow: 10px 6px 6px black;
 }
 .fond-header {
 	text-align: center;
@@ -159,6 +167,8 @@ h1 {
 }
 .navbar {
 	font-family: 'plaza';
+	color: #ff831d;
+	font-size: 18px;
 }
 
 .header-button {
@@ -168,6 +178,8 @@ h1 {
     .logo_header {
         width: 20%;
     }
+    .navbar {
+    	font-size: 14px;
 }
 @media only screen and (max-width: 500px) {
     .logo_header {
@@ -179,3 +191,9 @@ h1 {
 	background-image: none!important;
 }
 
+.concept{
+	font-family: 'plaza';
+	font-size: 14px;
+	color: #ff831d;
+	text-align: center
+}

@@ -212,3 +212,9 @@ footer{
 	margin-top: 20px;
 
 }
+body .ctn{
+	min-width: 320px;
+}
+.elem1:hover + .elem1bis { 
+	color:red!important;
+}

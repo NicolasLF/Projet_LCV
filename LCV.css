@@ -342,3 +342,19 @@ footer h3{
 	top: 3100px;
 	left: 1400px;
 }
+div.carte:hover + div.prix p{
+	font-weight: 900!important;
+	color: red;
+}
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff831d;
+    color: white!important;
+}
+.back-to-top:hover{
+	background-color: #d56407;
+	color: white;
+}

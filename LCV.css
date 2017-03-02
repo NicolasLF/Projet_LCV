@@ -12,6 +12,7 @@ body {
 	font-family: 'plaza';
 	font-size: 50px;
 	color: #ff831d;
+	font-weight: bold;
 }
 
 .carte {
@@ -31,6 +32,7 @@ body {
 .formulecarousel {
 	font-family: 'plaza';
 	text-align: center;
+	font-weight: bold;
 
 }
 .formule {
@@ -42,6 +44,10 @@ body {
 	float: : right;
 	text-align: right;
 	margin: 0px;
+}
+p {
+	font-size: large;
+	font-weight: bold;
 }
 .img-center{
 	display: block;

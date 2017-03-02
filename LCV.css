@@ -150,7 +150,7 @@ h1 {
 	font-size: calc(14px + 4vw);
 	position: absolute;
 	z-index: 1;
-	text-shadow: 10px 6px 6px black;
+	text-shadow: 10px 6px 4px black;
 }
 .titre2photo {
 	font-family: 'plaza';
@@ -161,7 +161,31 @@ h1 {
 	font-size: calc(10px + 2vw);
 	position: absolute;
 	z-index: 1;
-	text-shadow: 10px 6px 6px black;
+	text-shadow: 10px 6px 4px black;
+}
+.telheader {
+	font-family: 'plaza';
+	color: white;
+	text-align: center;
+	bottom: 5%;
+	width: 100%;
+	font-size: calc(10px + 2vw);
+	position: absolute;
+	z-index: 1;
+	text-shadow: 10px 6px 4px black;
+}
+.telheaderxs {
+	color: white;
+	text-align: center;
+	bottom: 5%;
+	width: 100%;
+	font-size: calc(10px + 2vw);
+	position: absolute;
+	z-index: 1;
+	text-shadow: 10px 6px 4px black;
+}
+.telheaderxs button{
+margin: auto;
 }
 .fond-header {
 	text-align: center;
@@ -190,11 +214,11 @@ h1 {
     .navbar {
     	font-size: 14px;
 }}
+
 @media only screen and (max-width: 500px) {
     .logo_header {
         width: 20%;
-        min-width: 80px;
-    }
+        min-width: 80px;}
 }
 .carousel-control.right, .carousel-control.left{
 	background-image: none!important;
@@ -221,12 +245,10 @@ h1 {
 	color:#222222;
 
 }
-.concept{
+.text-concept{
 	font-family: 'plaza';
-	font-size: 14px;
-	color: #ff831d;
-	text-align: center
-
+	font-size: large;
+	text-align: justify;
 }
 .insta {
 	margin-top: 20px!important;
@@ -234,4 +256,22 @@ h1 {
 }
 footer{
 	margin-top: 20px;
+}
+body .ctn{
+	min-width: 320px;
+}
+@media only screen and (max-width: 768px) {
+    .telheader{
+	display: none;
+}
+}
+
+.imgqui{
+	margin: 0 auto;
+	display: block;
+}
+
+.titre-text-concept{
+	font-family: 'plaza';
+	font-size: x-large;
 }

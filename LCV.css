@@ -149,7 +149,7 @@ h1 {
 	z-index: 1;
 	text-shadow: 10px 6px 6px black;
 }
-h2 {
+.titre2photo {
 	font-family: 'plaza';
 	color: white;
 	text-align: center;

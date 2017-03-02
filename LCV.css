@@ -277,6 +277,7 @@ body .ctn{
     .telheader{
 	display: none;
 }
+
 }
 
 .imgqui{
@@ -295,4 +296,49 @@ body .ctn{
 }
 footer h3{
 	font-size: 30px;
+}
+.cgu{
+	margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+.formbord1 {
+	border-right: 2px dashed black!important;
+}
+.formbord{
+	border-right: 2px dashed black!important;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.formbord1{
+	border-right: 2px dashed black!important;
+}
+}
+.formbordlast, .formbord1, .formbord{
+	height: 235px!important;
+}
+.cameleon{
+	position: absolute;
+	height: 50px;
+	width: 50px;
+}
+.cam1{
+	top: 200px;
+	left: 50px;
+}
+.cam2{
+	top: 1800px;
+	left: 1600px;
+}
+.cam3{
+	top: 1000px;
+	left: 250px;
+}
+.cam4{
+	top: 2500px;
+	left: 30px;
+}
+.cam5{
+	top: 3100px;
+	left: 1400px;
 }

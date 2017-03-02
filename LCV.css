@@ -223,9 +223,6 @@ margin: auto;
 .carousel-control.right, .carousel-control.left{
 	background-image: none!important;
 }
-.logo img-responsive {
-	max-width: 200px;	
-}
 .info-footer button{
 	margin:5px 0px;
 	height: 40px;

@@ -20,14 +20,15 @@ body {
 }
 
 .carte p {
-	text-align: left;
+	text-align: left
 }
-.prix p {
+.prix p{
 	text-align:right;
-	font-weight:bolder;
+	font-weight:bold;
 }
 .prix-formule {
 		font-weight:bolder;
+		bottom:O;
 }
 .glyphicon-leaf {
 	color:#008000;

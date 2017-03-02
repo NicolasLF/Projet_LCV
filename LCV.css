@@ -210,12 +210,12 @@ margin: auto;
     }
     .navbar {
     	font-size: 14px;
-}
+}}
+
 @media only screen and (max-width: 500px) {
     .logo_header {
         width: 20%;
-        min-width: 80px;
-    }
+        min-width: 80px;}
 }
 .carousel-control.right, .carousel-control.left{
 	background-image: none!important;
@@ -225,12 +225,10 @@ margin: auto;
 	height: 40px;
 	width: 40px;
 }
-.concept{
+.text-concept{
 	font-family: 'plaza';
-	font-size: 14px;
-	color: #ff831d;
-	text-align: center
-
+	font-size: large;
+	text-align: justify;
 }
 footer{
 	margin-top: 20px;
@@ -238,5 +236,16 @@ footer{
 }
 @media only screen and (max-width: 768px) {
     .telheader{
-display: none
+	display: none;
+}
+}
+
+.imgqui{
+	margin: 0 auto;
+	display: block;
+}
+
+.titre-text-concept{
+	font-family: 'plaza';
+	font-size: x-large;
 }

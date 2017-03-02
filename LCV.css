@@ -1,20 +1,22 @@
-
+/*--------------Général--------------*/
 body {
     background-image: url("Images/purty_wood.png");
     background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 @font-face {
 	font-family: 'plaza';
 	src: url('fonts/plaza.ttf');
 }
+
 .titres-sections {
 	font-family: 'plaza';
 	font-size: 50px;
 	color: #ff831d;
 	font-weight: bold;
 }
-
+/*--------------Header--------------*/
 .carte {
 	font-family: 'plaza';
 }
@@ -55,6 +57,9 @@ body {
 	font-family: 'plaza';
 	font-size: large;
 	font-weight: bold;
+}
+.container-fluid{
+	padding: 0;
 }
 .img-center{
 	display: block;
@@ -236,6 +241,9 @@ margin: auto;
 .info-footer {
 	font-family: 'plaza';
 	color:#222222;
+	font-size: large;
+	font-weight: bold;
+
 }
 .list-group-item {
 	border: none;
@@ -249,7 +257,9 @@ margin: auto;
 .text-concept{
 	font-family: 'plaza';
 	font-size: large;
-	text-align: justify;
+	text-align: center;
+	padding-top: 7%;
+	padding-bottom: 7%;
 }
 .insta {
 	margin-top: 20px!important;
@@ -275,4 +285,12 @@ body .ctn{
 .titre-text-concept{
 	font-family: 'plaza';
 	font-size: x-large;
+}
+.boutons-bas-footer{
+	font-family: 'plaza';
+	font-size: large;
+	font-weight: bold;
+}
+footer h3{
+	font-size: 30px;
 }

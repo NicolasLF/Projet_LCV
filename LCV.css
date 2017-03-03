@@ -93,6 +93,14 @@ body .ctn{
 	left: 1400px;
 }
 
+.caroussel-inner{ /*ombre caroussel*/
+	height: 250px; 
+}
+
+.carousel-control.right, .carousel-control.left{ /*ombre caroussel*/
+	background-image: none!important;
+}
+
 /*-------------- End Global --------------*/
 
 /*========== Vertical nav ==========*/
@@ -414,6 +422,10 @@ footer h3{
 	margin-bottom: 20px;
 }
 
+#footer.logo {
+	margin: auto;
+}
+
 /*-------------- End Footer --------------*/
 
 
@@ -421,13 +433,7 @@ footer h3{
 
 
 
-.caroussel-inner{
-	height: 250px; 			/*Je ne trouve pas les classes dans le html, est ce encore utile ???*/
-}
 
-.carousel-control.right, .carousel-control.left{ 			/*Je ne trouve pas les classes dans le html, est ce encore utile ???*/
-	background-image: none!important;
-}
 
 
 

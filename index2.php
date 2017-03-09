@@ -1,75 +1,3 @@
-<?php
-session_start();
-?>
-<?php
-/**
- * Created by PhpStorm.
- * User: wilder12
- * Date: 08/03/17
- * Time: 10:09
- */
-include 'connect.php';
-$bdd = mysqli_connect(SERVER, USER, PASS, DB);
-include 'function.php';
-$req = "SELECT * FROM ingredient";
-$resultat = mysqli_query($bdd, $req);
-$resultat2 = mysqli_query($bdd, $req);
-
-$today = date("Y-m-d H:i:s");
-
-if (isset($_POST['envoyer'])) {
-    if (!isset($_SESSION['id'])) {
-        foreach ($_POST as $key => $data) {
-            $postClean[$key] = mysqli_real_escape_string($bdd, htmlentities(trim($data)));
-        }
-        $nom = $postClean['nom'];
-        $prenom = $postClean['prenom'];
-        $mail = $postClean['mail'];
-        $tel = $postClean['tel'];
-
-        mysqli_query($bdd, "INSERT INTO client(nom,prenom,mail,tel) VALUES ('$nom','$prenom','$mail','$tel')");
-
-        $lastid = mysqli_insert_id($bdd);
-    }
-    if (isset($_SESSION['id'])) {
-        $lastid = $_SESSION['id'];
-    }
-
-    mysqli_query($bdd, "INSERT INTO commande(date,client_id) VALUES ('$today',$lastid)");
-    //$reqcount = mysqli_query($bdd, "SELECT COUNT(id) as countIng FROM ingredient");
-    //$row = mysqli_fetch_row($reqcount);
-    $lastid = mysqli_insert_id($bdd);
-    // $row[0]
-    while ($donnees = mysqli_fetch_assoc($resultat2)) {
-        $idingr = $donnees['id'];
-        if (isset($_POST['ingredient' . $idingr])) {
-            $idingredient = $_POST['ingredient' . $idingr];
-            mysqli_query($bdd, "INSERT INTO ingredient_has_commande VALUES ($idingredient,$lastid)");
-        }
-
-    }
-
-
-}
-function alerte($num, $text)
-{
-    $alerte = array(
-        1 => '<div class="alert alert-danger" role="alert"><p class="">' . $text . '</p></div>',
-        2 => '<div class="alert alert-warning" role="alert"><p class="">' . $text . '</p></div>',
-        3 => '<div class="alert alert-success" role="alert"><p class="">' . $text . '</p></div>',
-        4 => '<div class="alert alert-warning" role="alert"><p class="">Votre mot de pass est incorrect</p></div>',
-        5 => '<div class="alert alert-warning" role="alert"><p class="">Votre pseudo est trop court</p></div>',
-        9 => '<div class="alert alert-warning" role="alert"><p class="">Votre pseudo est trop court</p></div><div class="alert alert-warning" role="alert"><p class="">Votre mot de pass est incorrect</p></div>',
-        0 => '<div class="alert alert-warning" role="alert"><p class="">Merci de vous connecter pour accéder au BO</p></div>',
-        6 => '<div class="alert alert-warning" role="alert"><p class="">Ce pseudo existe déjà</p></div>',
-        7 => '<div class="alert alert-success" role="alert"><a href="BO.php">>>>>Félicitation, votre inscription a été enregistré. Direction le BO en cliquant ici<<<< </a></div>',
-        10 => '<div class="alert alert-danger" role="alert"><p class="">L\'item a été correctement supprimer</p></div>',
-        11 => '<div class="alert alert-success" role="alert"><p class="">L\'item a été correctement mis à jour</p></div>',
-        12 => '<div class="alert alert-success" role="alert"><p class="">Vous avez correctement ajouté un item à votre menu</p></div>');
-    return $alerte[$num];
-}
-
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -393,17 +321,6 @@ function alerte($num, $text)
 			</section>
 
 		<!-- End Bagels -->
-            <div id="menus" class="separate-container">
-                <div class="separate"></div>
-                <span class="titres-sections">BAGEL SUR MESURE</span>
-            </div>
-            <section class="container-fluid">
-
-
-                        <?php include 'formulaire.php';?>
-
-
-            </section>
 
 		<!-- Menu -->
 

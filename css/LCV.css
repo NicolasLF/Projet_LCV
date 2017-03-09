@@ -1,7 +1,7 @@
 /*-------------- Global --------------*/
 
 body {
-    background-image: url("Images/purty_wood.png");
+    background-image: url("../Images/purty_wood.png");
     background-repeat: repeat;
     background-attachment: fixed;
 }
@@ -12,7 +12,7 @@ body .ctn{
 
 @font-face {
 	font-family: 'plaza';
-	src: url('fonts/plaza.ttf');
+	src: url('../fonts/plaza.ttf');
 }
 
 .titres-sections {
@@ -47,7 +47,7 @@ body .ctn{
 }
 
 .separate{	/*Bande de séparation des sections*/ 
-	background-image: url('Images/separate.png');
+	background-image: url('../Images/separate.png');
 	background-repeat: repeat-x;
 	height: 15px;
 	margin-bottom: 4px;
@@ -427,8 +427,9 @@ footer h3{
 }
 
 /*-------------- End Footer --------------*/
-
-
+.form-bagel .form-group {
+	margin-bottom: 1px!important;
+}
 
 
 

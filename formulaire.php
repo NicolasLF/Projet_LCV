@@ -1,5 +1,13 @@
 <div class="row">
     <div>
+        <div class="col-xs-12">
+            <?php
+            if (isset($_GET['commande']) && $_GET['commande'] == 'success') {
+                echo alerte(3, 'Votre commande a bien été passée !');
+
+            }
+            ?>
+        </div>
 
         <form class="form-horizontal form-bagel" method="POST" action="index.php#bagelsm?commande=success">
             <div class="col-sm-6">

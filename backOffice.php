@@ -70,7 +70,7 @@ $resultat1 = mysqli_query($bdd, $req1);
 $req4 = "SELECT COUNT(id) as countiding FROM ingredient";
 $ingredientCount = mysqli_query($bdd, $req4);
 
-$req5 = "SELECT * FROM commande WHERE statut = 1";
+$req5 =  "SELECT * FROM commande WHERE statut = 1";
 $compta = mysqli_query($bdd, $req5);
 ?>
 <!doctype html>
@@ -86,28 +86,20 @@ $compta = mysqli_query($bdd, $req5);
     <title>Document</title>
 </head>
 <body>
-<div class="row">
-    <div class="header text-center col-xs-12">
 
-
-        <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#collapseBagels"
-                aria-expanded="false"
-                aria-controls="collapseBagels">
-            Gestion Bagels
-        </button>
-        <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#collapseNews"
-                aria-expanded="false"
-                aria-controls="collapseNews">
-            Newsletters
-        </button>
-        <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#collapseAvis"
-                aria-expanded="false"
-                aria-controls="collapseAvis">
-            Avis
-        </button>
-    </div>
-</div>
-<div class="collapse in" id="collapseBagels">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBagels" aria-expanded="false"
+        aria-controls="collapseBagels">
+    Gestion Bagels
+</button>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseNews" aria-expanded="false"
+        aria-controls="collapseNews">
+    Newsletters
+</button>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAvis" aria-expanded="false"
+        aria-controls="collapseAvis">
+    Avis
+</button>
+<div class="collapse" id="collapseBagels">
     <div class="well">
         <div class="container">
             <div class="row">
@@ -125,22 +117,6 @@ $compta = mysqli_query($bdd, $req5);
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
-                    <?php
-                    $ca = '';
-                    $nbcmd = '';
-                    while ($comptabilite = mysqli_fetch_assoc($compta)) {
-                        $idcmd2 = $comptabilite['id'];
-                        $nbcmd += $comptabilite['statut'];
-                        $req3 = mysqli_query($bdd, "SELECT * FROM ingredient INNER JOIN ingredient_has_commande WHERE ingredient.id = ingredient_has_commande.ingredient_id AND ingredient_has_commande.commande_id = $idcmd2");
-                        while ($donnees5 = mysqli_fetch_assoc($req3)) {
-                            $ca += intval($donnees5['prix']);
-
-                        }
-                    }
-
-                    echo 'Vous avez <strong>' . $nbcmd . '</strong> commande archivées pour un CA total de <strong>' . $ca . ' €</strong>';
-                    ?></div>
                 <div class="col-xs-10">
                     <a class="pull-left btn btn-primary" role="button" data-toggle="collapse" href="#collapseIngredient"
                        aria-expanded="false" aria-controls="collapseExample">
@@ -215,10 +191,10 @@ $compta = mysqli_query($bdd, $req5);
                 <td class="">
                     <form method="POST" action="deleteIng.php">
                         <input type="hidden" name="id" value="' . $donnees['id'] . '"/>
-                        <button  class="btn_inner btn btn-danger" type="submit" value="Supprimer" name="delete"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                        <input  class="btn_inner btn btn-danger" type="submit" value="Supprimer" name="delete"/>
                     </form>
                     <a class="btn_inner btn btn-primary" role="button" data-toggle="collapse" href="#collapse' . $donnees['id'] . '" aria-expanded="false" aria-controls="collapse' . $donnees['id'] . '">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Modifier
                     </a>
                 </td>
             </tr>
@@ -353,11 +329,11 @@ $compta = mysqli_query($bdd, $req5);
                 <td>
                         <!-- Button trigger modal -->
                     <a type="button" class="btn_inner btn btn-primary " data-toggle="modal" data-target="#myModal' . $idcommande . '">
-                      <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                      Voir
                     </a>
                     <form method="POST" action="backOffice.php">
                         <input type="hidden" name="idcmd" value="' . $idcommande . '">
-                        <button class="btn_inner btn btn-success" type="submit" name="update"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+                        <button class="btn_inner btn btn-success" type="submit" name="update">Valider</button>
                     </form>
                     
                     <!-- Modal -->
@@ -370,7 +346,7 @@ $compta = mysqli_query($bdd, $req5);
                           </div>
                           <div class="modal-body">
                           Liste des ingrédients du Bagels :
-                          <ul class="listecmd">
+                          <ul>
                           ';
                             $req3 = mysqli_query($bdd, "SELECT * FROM ingredient INNER JOIN ingredient_has_commande WHERE ingredient.id = ingredient_has_commande.ingredient_id AND ingredient_has_commande.commande_id = $idcommande");
                             $total = '';
@@ -379,7 +355,7 @@ $compta = mysqli_query($bdd, $req5);
                                 $total += $donnees1['prix'];
                             }
                             echo '
-                                <li><strong>Prix total de la commande :</strong> ' . $total . ' €</li>
+                                <li><strong>Prix total de la commande :</strong> ' . $total . '</li>
                             </ul>
                           </div>
                           <div class="modal-footer">
@@ -401,26 +377,35 @@ $compta = mysqli_query($bdd, $req5);
                     </table>
                 </div>
                 <div class="col-xs-12">
+                   <?php
+                    $ca = '';
+                   while ($comptabilite = mysqli_fetch_assoc($compta)){
+                       $idcmd2 = $comptabilite['id'];
+                       $nbcmd = count($comptabilite);
+                       $req3 = mysqli_query($bdd, "SELECT * FROM ingredient INNER JOIN ingredient_has_commande WHERE ingredient.id = ingredient_has_commande.ingredient_id AND ingredient_has_commande.commande_id = $idcmd2");
+                       while ($donnees5 = mysqli_fetch_assoc($req3)) {
+                            $ca += intval($donnees5['prix']);
 
+                   }}
+
+                  echo 'Vous avez'. $nbcmd .'commande archivées pour un CA total de '. $ca.' €';
+                   ?>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
-<div class="collapse in" id="collapseNews">
+<div class="collapse" id="collapseNews">
     <div class="well">
-        <div class="container">
+    <?php
+        echo'<h2>Liste des abonnés à la newsletter :</h2>';
 
+        $req = "SELECT idabonnes, nom, prenom, date_naissance, email FROM abonnes";
 
-            <?php
-            echo '<h2>Liste des abonnés à la newsletter :</h2>';
+        $res = mysqli_query($bdd, $req);
 
-            $req = "SELECT idabonnes, nom, prenom, date_naissance, email FROM abonnes";
-
-            $res = mysqli_query($bdd, $req);
-
-            echo ' <div class="row">
+        echo ' <div class="row">
             <div class="col-xs-12">
                 <table class="table table-striped">
                     <tr>
@@ -432,34 +417,32 @@ $compta = mysqli_query($bdd, $req5);
                         <th>Action</th>
                     </tr>';
 
-            while ($data = mysqli_fetch_assoc($res)) {
-                echo '           <tr>
-                        <td>' . $data['idabonnes'] . '</td>
-                        <td>' . $data['nom'] . '</td>
-                        <td>' . $data['prenom'] . '</td>
-                        <td>' . $data['date_naissance'] . '</td>
-                        <td>' . $data['email'] . '</td>
-                        <td><a href="modif.php?id=' . $data['idabonnes'] . '" class="btn btn-default">Modifier</a><a href="delete.php?id=' . $data['idabonnes'] . '" class="btn btn-danger">Effacer</a></td>
+                    while($data = mysqli_fetch_assoc($res)){
+                    echo'           <tr>
+                        <td>'.$data['idabonnes'].'</td>
+                        <td>'.$data['nom'].'</td>
+                        <td>'.$data['prenom'].'</td>
+                        <td>'.$data['date_naissance'].'</td>
+                        <td>'.$data['email'].'</td>
+                        <td><a href="modif.php?id='.$data['idabonnes'].'" class="btn btn-default">Modifier</a><a href="delete.php?id='.$data['idabonnes'].'" class="btn btn-danger">Effacer</a></td>
 
                     </tr>';
-            }
-            echo '             <tr><a href="nouveau.php" class="btn btn-success">Créer</a></tr>
+                    }
+                    echo  '             <tr><a href="nouveau.php" class="btn btn-success">Créer</a></tr>
                 </table>
             </div>
         </div>'; ?>
-        </div>
     </div>
 </div>
-<div class="collapse in" id="collapseAvis">
+<div class="collapse" id="collapseAvis">
     <div class="well">
-        <div class="container">
         <?php
-        if (isset($_GET['id'])) {
+        if(isset($_GET['id'])) {
             $id1 = $_GET['id'];
             mysqli_query($bdd, "UPDATE commentaires SET valid_admin= 1 WHERE id= $id1 ");
             //header('location: backOffice.php');
         }
-        if (isset($_GET['ok'])) {
+        if(isset($_GET['ok'])) {
             $id2 = $_GET['ok'];
             mysqli_query($bdd, "UPDATE commentaires SET valid_admin= 0 WHERE id= $id2 ");
             //header('location: backOffice.php');
@@ -468,26 +451,26 @@ $compta = mysqli_query($bdd, $req5);
         $resultatnp = mysqli_query($bdd, 'SELECT * FROM commentaires');
 
 
-        while ($donneesnp = mysqli_fetch_assoc($resultatnp)) {
+        while($donneesnp = mysqli_fetch_assoc($resultatnp)) {
             $id = $donneesnp['id'];
             $validid = $donneesnp['valid_admin'];
-            echo '<h2>' . $donneesnp["pseudo"] . '</h2>
-            <div class="jumbotron">
-            
-            ' . $donneesnp["comment"] . '
-            <br/>
-            ';
-            if ($validid == 1) {
+            echo '<br />';
+            echo $donneesnp['pseudo'];
+            echo '<br />';
+            echo $donneesnp['comment'];
+            echo '<br />';
+            echo $donneesnp['note'];
+            echo '<br />';
+            if($validid == 1) {
                 $affichage = 'ne pas afficher';
                 $i = 'ok';
-            } else {
+            }else{
                 $affichage = 'afficher';
                 $i = 'id';
             }
-            echo '</div><div><span>' . $donneesnp["note"] . '</span> /5<br/><a class="btn btn-primary" href="backOffice.php?' . $i . '=' . $id . '">' . $affichage . '</a></div>';
+            echo '<a href="backOffice.php?'.$i.'=' . $id . '">' . $affichage . '</a>';
         }
         ?>
-        </div>
     </div>
 </div>
 

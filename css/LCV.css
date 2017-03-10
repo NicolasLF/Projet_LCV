@@ -1,7 +1,7 @@
 /*-------------- Global --------------*/
 
 body {
-    background-image: url("Images/purty_wood.png");
+    background-image: url("../Images/purty_wood.png");
     background-repeat: repeat;
     background-attachment: fixed;
 }
@@ -12,7 +12,7 @@ body .ctn{
 
 @font-face {
 	font-family: 'plaza';
-	src: url('fonts/plaza.ttf');
+	src: url('../fonts/plaza.ttf');
 }
 
 .titres-sections {
@@ -47,7 +47,7 @@ body .ctn{
 }
 
 .separate{	/*Bande de séparation des sections*/ 
-	background-image: url('Images/separate.png');
+	background-image: url('../Images/separate.png');
 	background-repeat: repeat-x;
 	height: 15px;
 	margin-bottom: 4px;
@@ -91,6 +91,14 @@ body .ctn{
 .cam5{
 	top: 3100px;
 	left: 1400px;
+}
+
+.caroussel-inner{ /*ombre caroussel*/
+	height: 250px; 
+}
+
+.carousel-control.right, .carousel-control.left{ /*ombre caroussel*/
+	background-image: none!important;
 }
 
 /*-------------- End Global --------------*/
@@ -414,27 +422,62 @@ footer h3{
 	margin-bottom: 20px;
 }
 
+#footer.logo {
+	margin: auto;
+}
+
 /*-------------- End Footer --------------*/
+.form-bagel .form-group {
+	margin-bottom: 1px!important;
+}
+.flatRoundedCheckbox
+{
+	width: 90px;
+	height: 30px;
+	margin-top: 10px;
+	position: relative;
+}
+.flatRoundedCheckbox div
+{
+	width: 100%;
+	height:100%;
+	background: #d3d3d3;
+	border-radius: 50px;
+	position: relative;
+	top:-30px;
+}
+.flatRoundedCheckbox label
+{
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50px;
 
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
 
-
-
-
-
-.caroussel-inner{
-	height: 250px; 			/*Je ne trouve pas les classes dans le html, est ce encore utile ???*/
+	cursor: pointer;
+	position: absolute;
+	top: 0px;
+	z-index: 1;
+	left: 8px;
+	background: #FFF;
 }
 
-.carousel-control.right, .carousel-control.left{ 			/*Je ne trouve pas les classes dans le html, est ce encore utile ???*/
-	background-image: none!important;
+.flatRoundedCheckbox input[type=checkbox]:checked ~ div
+{
+	background: #ff831d;
 }
 
+.flatRoundedCheckbox input[type=checkbox]:checked ~ label {
+	left: 60px;
+}
 
-
-
-
-
-
-
-
-
+.form-bagel div span{
+    font-family: 'plaza';
+    font-size: 20px;
+    font-weight: 600;
+}

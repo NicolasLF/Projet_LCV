@@ -1,0 +1,20 @@
+.alert{
+    margin: 20px 0;
+}
+.btn_inner{
+    float:left!important;
+    margin-right:3px;
+}
+#collapseupdate{
+
+}
+.picto_img{
+    height: 30px;
+    width: 30px;
+}
+.danger{
+    background-color: #ffb9b9!important;
+}
+.coling{
+    margin-top:10px;
+}

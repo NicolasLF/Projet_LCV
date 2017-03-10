@@ -1,81 +1,3 @@
-<?php
-session_start();
-?>
-<?php
-/**
- * Created by PhpStorm.
- * User: wilder12
- * Date: 08/03/17
- * Time: 10:09
- */
-include 'connect.php';
-$bdd = mysqli_connect(SERVER, USER, PASS, DB);
-include 'function.php';
-$req = "SELECT * FROM ingredient";
-$resultat = mysqli_query($bdd, $req);
-$resultat2 = mysqli_query($bdd, $req);
-$resultat3 = mysqli_query($bdd, $req);
-
-$today = date("Y-m-d H:i:s");
-
-if (isset($_POST['envoyer'])) {
-    if (!isset($_SESSION['id'])) {
-        foreach ($_POST as $key => $data) {
-            $postClean[$key] = mysqli_real_escape_string($bdd, htmlentities(trim($data)));
-        }
-        $nom = $postClean['nom'];
-        $prenom = $postClean['prenom'];
-        $mail = $postClean['mail'];
-        $tel = $postClean['tel'];
-
-        mysqli_query($bdd, "INSERT INTO client(nom,prenom,mail,tel) VALUES ('$nom','$prenom','$mail','$tel')");
-
-        $lastid = mysqli_insert_id($bdd);
-    }
-    if (isset($_SESSION['id'])) {
-        $lastid = $_SESSION['id'];
-    }
-
-    mysqli_query($bdd, "INSERT INTO commande(date,client_id) VALUES ('$today',$lastid)");
-    //$reqcount = mysqli_query($bdd, "SELECT COUNT(id) as countIng FROM ingredient");
-    //$row = mysqli_fetch_row($reqcount);
-    $lastid = mysqli_insert_id($bdd);
-    // $row[0]
-    while ($donnees = mysqli_fetch_assoc($resultat2)) {
-        $idingr = $donnees['id'];
-        $qtenews = intval($donnees['qte']) -1;
-
-        if (isset($_POST['ingredient' . $idingr])) {
-            $idingredient = $_POST['ingredient' . $idingr];
-
-
-            mysqli_query($bdd, "INSERT INTO ingredient_has_commande VALUES ($idingredient,$lastid)");
-            mysqli_query($bdd, "UPDATE ingredient SET qte = $qtenews WHERE id = $idingredient ");
-        }
-
-    }
-
-
-}
-function alerte($num, $text)
-{
-    $alerte = array(
-        1 => '<div class="alert alert-danger" role="alert"><p class="">' . $text . '</p></div>',
-        2 => '<div class="alert alert-warning" role="alert"><p class="">' . $text . '</p></div>',
-        3 => '<div class="alert alert-success" role="alert"><p class="">' . $text . '</p></div>',
-        4 => '<div class="alert alert-warning" role="alert"><p class="">Votre mot de pass est incorrect</p></div>',
-        5 => '<div class="alert alert-warning" role="alert"><p class="">Votre pseudo est trop court</p></div>',
-        9 => '<div class="alert alert-warning" role="alert"><p class="">Votre pseudo est trop court</p></div><div class="alert alert-warning" role="alert"><p class="">Votre mot de pass est incorrect</p></div>',
-        0 => '<div class="alert alert-warning" role="alert"><p class="">Merci de vous connecter pour accéder au BO</p></div>',
-        6 => '<div class="alert alert-warning" role="alert"><p class="">Ce pseudo existe déjà</p></div>',
-        7 => '<div class="alert alert-success" role="alert"><a href="BO.php">>>>>Félicitation, votre inscription a été enregistré. Direction le BO en cliquant ici<<<< </a></div>',
-        10 => '<div class="alert alert-danger" role="alert"><p class="">L\'item a été correctement supprimer</p></div>',
-        11 => '<div class="alert alert-success" role="alert"><p class="">L\'item a été correctement mis à jour</p></div>',
-        12 => '<div class="alert alert-success" role="alert"><p class="">Vous avez correctement ajouté un item à votre menu</p></div>');
-    return $alerte[$num];
-}
-
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -144,7 +66,6 @@ function alerte($num, $text)
 					        <li><a class="js-scrollTo" href="#concept">Notre Concept</a></li>
 					        <li><a class="js-scrollTo" href="#formules">Nos Formules</a></li>
 					        <li><a class="js-scrollTo" href="#bagels">Nos Bagels</a></li>
-					        <li><a class="js-scrollTo" href="#bagelsm">Sur-Mesure</a></li>
 					        <li><a class="js-scrollTo" href="#menus">Nos Menus</a></li>
 					        <li><a class="js-scrollTo" href="#ou">Où nous trouver</a></li>
 					      </ul>
@@ -400,22 +321,6 @@ function alerte($num, $text)
 			</section>
 
 		<!-- End Bagels -->
-            <div id="bagelsm" class="separate-container">
-                <div class="separate"></div>
-                <span class="titres-sections">BAGEL SUR MESURE</span>
-            </div>
-            <section class="container-fluid text-center">
-                <button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapseSurMesure" aria-expanded="false" aria-controls="collapseSurMesure">
-                    Je commande mon bagel sur-mesure
-                </button>
-                <div class="collapse" id="collapseSurMesure">
-                    <div class="well">
-
-                        <?php include 'formulaire.php';?>
-                    </div>
-                </div>
-
-            </section>
 
 		<!-- Menu -->
 
@@ -634,63 +539,6 @@ function alerte($num, $text)
 
 		<!-- End menu fixed right -->
 
-        <!-- Formulaire Experience -->
-            <form action="ciblenp.php" method="post">
-                <p>
-
-                <h3>PARTAGEZ VOTRE EXPERIENCE AVEC LE CAMELEON VOYAGEUR</h3>
-                <br />
-                <div class="form-group">
-                    <label>Pseudo</label>
-                    <input type="text" class="form-control" name="pseudo" placeholder="Indiquez votre Pseudo"/><br />
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Votre adresse email"/><br />
-                </div>
-                <div class="form-group">
-                    <label for="comment"> Commentaires</label>
-                    <textarea class="form-control" rows="3" name="comment" id="comment"></textarea>
-                </div>
-                <br />
-                <h3>Quelle note donneriez vous à votre experience avec Le Caméléon Voyageur:<h3></h3><br />
-                <div>
-                    <input type="radio" name="note" value="0" id="0" /> <label for="0">0 = Euhhh y a t'il vraiment un cuisinier ? ... immangeable !!!</label><br />
-                </div>
-                <div>
-                    <input type="radio" name="note" value="1" id="1" /> <label for="1">1 = Alors ... j'ai mangé, mais pas deux fois !!</label><br />
-                </div>
-                <div>
-                    <input type="radio" name="note" value="2" id="2" /> <label for="2">2 = Mouaiiii ... on a vu mieux !</label><br />
-                </div>
-                <div>
-                    <input type="radio" name="note" value="3" id="3" /> <label for="3">3 = C'était bon ... </label><br />
-                </div>
-                <div>
-                    <input type="radio" name="note" value="4" id="4" /> <label for="4">4 = Je me suis régalé ...</label><br />
-                </div>
-                <div>
-                    <input type="radio" name="note" value="5" id="5" /> <label for="5">5 = Ce fût la meilleur expérience culinaire de ma vie ....</label><br />
-                </div>
-                <div>
-                    <input type="submit" value="Partager" />
-                </div>
-                </p>
-            </form>
-
-            <?php
-            include 'connectnp.php';
-            $bddnp=mysqli_connect(SERVER,USER,PASS,DB);
-
-            $resultatnp = mysqli_query($bddnp, 'SELECT * FROM commentaires WHERE note IS NOT NULL AND note <> "" AND valid_admin=1');
-
-            while($donneesnp = mysqli_fetch_assoc($resultatnp))
-            {
-                echo $donneesnp['pseudo'].' '.$donneesnp['comment'].' '.$donneesnp['note'];
-            }
-            ?>
-        <!-- End Formulaire Experience -->
-
 		<!-- Footer -->
 
 			<footer>
@@ -724,52 +572,9 @@ function alerte($num, $text)
 							
 							<h2>FOOD TRUCK TRAITEUR TOUS EVENEMENTS</h2>
 						</div>
+						
 
-
-                        <!-- Formulaire Newsletter -->
-
-                        <div class="newsletter">
-                            <form class="form-inline" method="POST" action="index.php">
-                                <div class="form-group">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" class="form-control" value="" id="nom" name="nom">
-                                </div><br />
-                                <div class="form-group">
-                                    <label for="prenom">Prénom</label>
-                                    <input type="text" class="form-control" value="" id="prenom" name="prenom">
-                                </div><br />
-                                <div class="form-group">
-                                    <label for="date_naissance">Né(e) le :</label>
-                                    <input type="date" class="form-control" value="" id="date_naissance" name="date_naissance"/>
-                                </div><br />
-                                <div class="form-group">
-                                    <label for="exampleInputEmail2">Email</label>
-                                    <input type="email" class="form-control" value="" id="email" name="email">
-                                </div><br />
-                                <input type="submit" name="btnSubmit" value="Je m'abonne à la newsletter" class="btn btn-default"> </input>
-                            </form>
-                        </div>
-                        <?php
-
-                        include 'connectsp.php';
-                        include 'header.php';
-                        $bdd = mysqli_connect(SERVER, USER, PASS, DB);
-                        if (isset($_POST['btnSubmit'])) {
-                            $nom = $_POST['nom'];
-                            $prenom = $_POST['prenom'];
-                            $date_naissance = $_POST['date_naissance'];
-                            $email = $_POST['email'];
-
-                            $req = "INSERT INTO abonnes (nom, prenom, date_naissance, email) VALUES ('$nom', '$prenom', '$date_naissance', '$email')";
-                            if(!mysqli_query($bdd, $req)) {
-                                echo mysqli_error($bdd);
-                            }
-                        }
-                        ?>
-                        <!-- Fin Formulaire Newsletter -->
-
-
-                    </div>
+					</div>
 					<div class="col-sm-6 info-footer">
 						<h3>HORAIRES ET LIEU</h3>
 						<div>
@@ -869,6 +674,7 @@ function alerte($num, $text)
 							    </div>
 							  </div>
 							</div>
+						</div>
 					</div>
 				</div>
 				<

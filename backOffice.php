@@ -6,7 +6,7 @@
  * Time: 17:45*/
 session_start();
 //if(isset($_SESSION['admin']) || $_SESSION['admin'] != '1') {
-  //  header('location: formulaire_membre.php?erreur=no');
+//  header('location: formulaire_membre.php?erreur=no');
 //}
 include 'connect.php';
 $bdd = mysqli_connect(SERVER, USER, PASS, DB);
@@ -68,7 +68,10 @@ $req1 = "SELECT commande.*,commande.id as idcommande,client.id as idclient,clien
 $resultat1 = mysqli_query($bdd, $req1);
 
 $req4 = "SELECT COUNT(id) as countiding FROM ingredient";
-$ingredientCount = mysqli_query($bdd,$req4);
+$ingredientCount = mysqli_query($bdd, $req4);
+
+$req5 =  "SELECT * FROM commande WHERE statut = 1";
+$compta = mysqli_query($bdd, $req5);
 ?>
 <!doctype html>
 <html lang="en">
@@ -84,78 +87,94 @@ $ingredientCount = mysqli_query($bdd,$req4);
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            BONJOUR <?php if(isset($_SESSION['pseudo'])){echo $_SESSION['pseudo'];}?>
-        </div>
-        <div class="col-xs-12">
-            <?php
-            if (isset($_GET['mess'])) {
-                echo alerte($_GET['mess'], '');
-            }
-            ?>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-10">
-            <a class="pull-left btn btn-primary" role="button" data-toggle="collapse" href="#collapseIngredient"
-               aria-expanded="false" aria-controls="collapseExample">
-                <?php
-                while ($donneesCountIngredient = mysqli_fetch_assoc($ingredientCount)){
-                    echo 'Voir les '.$donneesCountIngredient['countiding'].' ingrendients';
-                }
-                ?>
-
-            </a>
-            <a class="pull-right btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample"
-               aria-expanded="false" aria-controls="collapseExample">
-                Ajouter un ingredient
-            </a>
-            <div class="col-xs-12 collapse coling" id="collapseExample">
-                <form class="form-group" method="POST" action="backOffice.php">
-                    <input type="text" name="nom" value="" placeholder="Nom de l'ingredient">
-                    <input type="text" name="prix" size="3" value="" placeholder="€">
-                    <input type="text" name="qte" value="" placeholder="Stock">
-                    <input type="text" name="img" value="" placeholder="url">
-                    <input class="btn btn-danger" type="submit" value="ajouter" name="ajouter"/>
-                </form>
-            </div>
-
-        </div>
-
-        <div class=" col-xs-10">
-            <div class="collapse" id="collapseIngredient">
-
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <td>
-                            Ingredients
-                        </td>
-                        <td>
-                            Prix
-                        </td>
-                        <td>
-                            Stock
-                        </td>
-                        <td>
-                            Image
-                        </td>
-                        <td>
-                            action
-                        </td>
-                    </tr>
-                    </thead>
-                    <tbody>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBagels" aria-expanded="false"
+        aria-controls="collapseBagels">
+    Gestion Bagels
+</button>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseNews" aria-expanded="false"
+        aria-controls="collapseNews">
+    Newsletters
+</button>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAvis" aria-expanded="false"
+        aria-controls="collapseAvis">
+    Avis
+</button>
+<div class="collapse" id="collapseBagels">
+    <div class="well">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    BONJOUR <?php if (isset($_SESSION['pseudo'])) {
+                        echo $_SESSION['pseudo'];
+                    } ?>
+                </div>
+                <div class="col-xs-12">
                     <?php
-                    while ($donnees = mysqli_fetch_assoc($resultat)) {
-                        $qteint = intval($donnees["qte"]);
-                        $class = '';
-                        if ($qteint < 30) {
-                            $class = 'danger';
+                    if (isset($_GET['mess'])) {
+                        echo alerte($_GET['mess'], '');
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10">
+                    <a class="pull-left btn btn-primary" role="button" data-toggle="collapse" href="#collapseIngredient"
+                       aria-expanded="false" aria-controls="collapseExample">
+                        <?php
+                        while ($donneesCountIngredient = mysqli_fetch_assoc($ingredientCount)) {
+                            echo 'Voir les ' . $donneesCountIngredient['countiding'] . ' ingrendients';
                         }
-                        echo '
+                        ?>
+
+                    </a>
+                    <a class="pull-right btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample"
+                       aria-expanded="false" aria-controls="collapseExample">
+                        Ajouter un ingredient
+                    </a>
+                    <div class="col-xs-12 collapse coling" id="collapseExample">
+                        <form class="form-group" method="POST" action="backOffice.php">
+                            <input type="text" name="nom" value="" placeholder="Nom de l'ingredient">
+                            <input type="text" name="prix" size="3" value="" placeholder="€">
+                            <input type="text" name="qte" value="" placeholder="Stock">
+                            <input type="text" name="img" value="" placeholder="url">
+                            <input class="btn btn-danger" type="submit" value="ajouter" name="ajouter"/>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class=" col-xs-10">
+                    <div class="collapse" id="collapseIngredient">
+
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <td>
+                                    Ingredients
+                                </td>
+                                <td>
+                                    Prix
+                                </td>
+                                <td>
+                                    Stock
+                                </td>
+                                <td>
+                                    Image
+                                </td>
+                                <td>
+                                    action
+                                </td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            while ($donnees = mysqli_fetch_assoc($resultat)) {
+                                $qteint = intval($donnees["qte"]);
+                                $class = '';
+                                if ($qteint < 30) {
+                                    $class = 'danger';
+                                }
+                                echo '
                 <tr class="' . $class . '">
                 <td>
                     ' . $donnees["nom"] . '
@@ -194,42 +213,42 @@ $ingredientCount = mysqli_query($bdd,$req4);
                 </td>
             </tr>
                 ';
-                    }
-                    ?>
-                    </tbody>
-                </table>
-            </div>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <td>
-                        Commande N°
-                    </td>
-                    <td>
-                        Date
-                    </td>
-                    <td>
-                        Nom du client
-                    </td>
-                    <td>
-                        Telephone
-                    </td>
-                    <td>
-                        Nbr de commande
-                    </td>
-                    <td>
-                        Nbr de commande
-                    </td>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                while ($donnees = mysqli_fetch_assoc($resultat1)) {
-                    $nom = $donnees['nom'];
-                    $reqCount = "SELECT COUNT(client.nom) as countnom FROM commande INNER JOIN client ON commande.client_id = client.id WHERE nom = '$nom'";
-                    $resultatCount = mysqli_query($bdd, $reqCount);
-                    $idcommande = $donnees["idcommande"];
-                    echo ' 
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <td>
+                                Commande N°
+                            </td>
+                            <td>
+                                Date
+                            </td>
+                            <td>
+                                Nom du client
+                            </td>
+                            <td>
+                                Telephone
+                            </td>
+                            <td>
+                                Nbr de commande
+                            </td>
+                            <td>
+                                Nbr de commande
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        while ($donnees = mysqli_fetch_assoc($resultat1)) {
+                            $nom = $donnees['nom'];
+                            $reqCount = "SELECT COUNT(client.nom) as countnom FROM commande INNER JOIN client ON commande.client_id = client.id WHERE nom = '$nom'";
+                            $resultatCount = mysqli_query($bdd, $reqCount);
+                            $idcommande = $donnees["idcommande"];
+                            echo ' 
             <tr>
                 <td>
                     ' . $idcommande . '
@@ -302,10 +321,10 @@ $ingredientCount = mysqli_query($bdd,$req4);
                      ' . $donnees["tel"] . '
                 </td>
                 <td>';
-                    while ($donneesCount = mysqli_fetch_assoc($resultatCount)) {
-                        echo $donneesCount['countnom'];
-                    }
-                    echo '
+                            while ($donneesCount = mysqli_fetch_assoc($resultatCount)) {
+                                echo $donneesCount['countnom'];
+                            }
+                            echo '
                 </td>
                 <td>
                         <!-- Button trigger modal -->
@@ -329,13 +348,13 @@ $ingredientCount = mysqli_query($bdd,$req4);
                           Liste des ingrédients du Bagels :
                           <ul>
                           ';
-                    $req3 = mysqli_query($bdd, "SELECT * FROM ingredient INNER JOIN ingredient_has_commande WHERE ingredient.id = ingredient_has_commande.ingredient_id AND ingredient_has_commande.commande_id = $idcommande");
-                    $total = '';
-                    while ($donnees1 = mysqli_fetch_assoc($req3)) {
-                        echo '<li><img class="picto_img" src="' . $donnees1['img'] . '" ></li> ';
-                        $total += $donnees1['prix'];
-                    }
-                    echo '
+                            $req3 = mysqli_query($bdd, "SELECT * FROM ingredient INNER JOIN ingredient_has_commande WHERE ingredient.id = ingredient_has_commande.ingredient_id AND ingredient_has_commande.commande_id = $idcommande");
+                            $total = '';
+                            while ($donnees1 = mysqli_fetch_assoc($req3)) {
+                                echo '<li><img class="picto_img" src="' . $donnees1['img'] . '" ></li> ';
+                                $total += $donnees1['prix'];
+                            }
+                            echo '
                                 <li><strong>Prix total de la commande :</strong> ' . $total . '</li>
                             </ul>
                           </div>
@@ -352,17 +371,109 @@ $ingredientCount = mysqli_query($bdd,$req4);
                     </div>
                 </td>
                 </tr>';
-                }
-                ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-xs-4">
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12">
+                   <?php
+                    $ca = '';
+                   while ($comptabilite = mysqli_fetch_assoc($compta)){
+                       $idcmd2 = $comptabilite['id'];
+                       $nbcmd = count($comptabilite);
+                       $req3 = mysqli_query($bdd, "SELECT * FROM ingredient INNER JOIN ingredient_has_commande WHERE ingredient.id = ingredient_has_commande.ingredient_id AND ingredient_has_commande.commande_id = $idcmd2");
+                       while ($donnees5 = mysqli_fetch_assoc($req3)) {
+                            $ca += intval($donnees5['prix']);
+
+                   }}
+
+                  echo 'Vous avez'. $nbcmd .'commande archivées pour un CA total de '. $ca.' €';
+                   ?>
+                </div>
+            </div>
 
         </div>
     </div>
-
 </div>
+<div class="collapse" id="collapseNews">
+    <div class="well">
+    <?php
+        echo'<h2>Liste des abonnés à la newsletter :</h2>';
+
+        $req = "SELECT idabonnes, nom, prenom, date_naissance, email FROM abonnes";
+
+        $res = mysqli_query($bdd, $req);
+
+        echo ' <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Date de naissance</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>';
+
+                    while($data = mysqli_fetch_assoc($res)){
+                    echo'           <tr>
+                        <td>'.$data['idabonnes'].'</td>
+                        <td>'.$data['nom'].'</td>
+                        <td>'.$data['prenom'].'</td>
+                        <td>'.$data['date_naissance'].'</td>
+                        <td>'.$data['email'].'</td>
+                        <td><a href="modif.php?id='.$data['idabonnes'].'" class="btn btn-default">Modifier</a><a href="delete.php?id='.$data['idabonnes'].'" class="btn btn-danger">Effacer</a></td>
+
+                    </tr>';
+                    }
+                    echo  '             <tr><a href="nouveau.php" class="btn btn-success">Créer</a></tr>
+                </table>
+            </div>
+        </div>'; ?>
+    </div>
+</div>
+<div class="collapse" id="collapseAvis">
+    <div class="well">
+        <?php
+        if(isset($_GET['id'])) {
+            $id1 = $_GET['id'];
+            mysqli_query($bdd, "UPDATE commentaires SET valid_admin= 1 WHERE id= $id1 ");
+            //header('location: backOffice.php');
+        }
+        if(isset($_GET['ok'])) {
+            $id2 = $_GET['ok'];
+            mysqli_query($bdd, "UPDATE commentaires SET valid_admin= 0 WHERE id= $id2 ");
+            //header('location: backOffice.php');
+        }
+
+        $resultatnp = mysqli_query($bdd, 'SELECT * FROM commentaires');
+
+
+        while($donneesnp = mysqli_fetch_assoc($resultatnp)) {
+            $id = $donneesnp['id'];
+            $validid = $donneesnp['valid_admin'];
+            echo '<br />';
+            echo $donneesnp['pseudo'];
+            echo '<br />';
+            echo $donneesnp['comment'];
+            echo '<br />';
+            echo $donneesnp['note'];
+            echo '<br />';
+            if($validid == 1) {
+                $affichage = 'ne pas afficher';
+                $i = 'ok';
+            }else{
+                $affichage = 'afficher';
+                $i = 'id';
+            }
+            echo '<a href="backOffice.php?'.$i.'=' . $id . '">' . $affichage . '</a>';
+        }
+        ?>
+    </div>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>

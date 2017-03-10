@@ -1,7 +1,6 @@
 <?php
 
 include 'connect.php';
-include 'header.php';
 $bdd = mysqli_connect(SERVER, USER, PASS, DB);
 
 
@@ -22,8 +21,8 @@ echo ' <form class="form-inline" method="POST" action="nouveau.php">
                         <label for="exampleInputEmail2">Email</label>
                         <input type="email" class="form-control" value="" id="email" name="email">
                     </div><br />
-                    <input type="submit" name="btnSubmit" value="Nouvel abonné" class="btn btn-default" href="adminabonnes.php"> </input>
-                    <a href="adminabonnes.php" class="btn btn-default">Revenir à l\'admin</a>
+                    <input type="submit" name="btnSubmit" value="Nouvel abonné" class="btn btn-default" href="backOffice.php"> </input>
+                    <a href="backOffice.php" class="btn btn-default">Revenir à l\'admin</a>
             </form>';
 
 

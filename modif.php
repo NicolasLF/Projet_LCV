@@ -1,6 +1,5 @@
 <?php
 include 'connect.php';
-include 'header.php';
 $bdd = mysqli_connect(SERVER, USER, PASS, DB);
 if(isset($_POST['btnSubmit'])){
     $req="UPDATE abonnes SET nom='" . $_POST['nom'] . "',prenom='" .$_POST['prenom'] . "', date_naissance='" .$_POST['date_naissance'] . "', email='" .$_POST['email'] ."' WHERE idabonnes=". $_GET['id'];
@@ -33,7 +32,7 @@ echo ' <form class="form-inline" method="POST" action="modif.php?id=' .$id. '">
                         <label for="exampleInputEmail2">Email</label>
                         <input type="email" class="form-control" value="' . $data['email'] . '" id="email" name="email">
                     </div><br />
-                    <input type="submit" name="btnSubmit" value="Actualiser" class="btn btn-default" href="adminabonnes.php"> </input>
-                    <a href="adminabonnes.php" class="btn btn-default">Revenir à l\'admin</a>
+                    <input type="submit" name="btnSubmit" value="Actualiser" class="btn btn-default" href="backOffice.php"> </input>
+                    <a href="backOffice.php" class="btn btn-default">Revenir à l\'admin</a>
             </form>';
 

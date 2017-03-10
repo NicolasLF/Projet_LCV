@@ -776,9 +776,6 @@ function alerte($num, $text)
                         </div>
                         <?php
 
-                        include 'connectsp.php';
-                        include 'header.php';
-                        $bdd = mysqli_connect(SERVER, USER, PASS, DB);
                         if (isset($_POST['btnSubmit'])) {
                             $nom = $_POST['nom'];
                             $prenom = $_POST['prenom'];

@@ -635,25 +635,44 @@ function alerte($num, $text)
 		<!-- End menu fixed right -->
 
         <!-- Formulaire Experience -->
+            <button type="button" class="experience btn btn-primary btn-lg" data-toggle="modal" data-target="#experience">
+                Donnez votre avis !
+            </button>
+
+            <div class="modal fade" id="experience" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">PARTAGEZ VOTRE EXPERIENCE AVEC LE CAMELEON VOYAGEUR</h4>
+                        </div>
+                        <div class="modal-body">
             <form action="ciblenp.php" method="post">
                 <p>
 
-                <h3>PARTAGEZ VOTRE EXPERIENCE AVEC LE CAMELEON VOYAGEUR</h3>
+                <h3>Donnez nous votre avis :</h3>
                 <br />
+                <?php
+                $pseudo = '';
+                $email = '';
+                if(isset($_SESSION['pseudo'])){
+                    $pseudo = $_SESSION['pseudo'];
+                    $email = $_SESSION['mail'];
+                } ?>
                 <div class="form-group">
                     <label>Pseudo</label>
-                    <input type="text" class="form-control" name="pseudo" placeholder="Indiquez votre Pseudo"/><br />
+                    <input type="text" class="form-control" name="pseudo" value="<?php echo $pseudo;?>" placeholder="Indiquez votre Pseudo"/><br />
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Votre adresse email"/><br />
+                    <input type="email" class="form-control" name="email" value="<?php echo $email;?>" placeholder="Votre adresse email"/><br />
                 </div>
                 <div class="form-group">
                     <label for="comment"> Commentaires</label>
                     <textarea class="form-control" rows="3" name="comment" id="comment"></textarea>
                 </div>
                 <br />
-                <h3>Quelle note donneriez vous à votre experience avec Le Caméléon Voyageur:<h3></h3><br />
+                <h3>Quelle note donneriez vous à votre experience avec Le Caméléon Voyageur:</h3><br />
                 <div>
                     <input type="radio" name="note" value="0" id="0" /> <label for="0">0 = Euhhh y a t'il vraiment un cuisinier ? ... immangeable !!!</label><br />
                 </div>
@@ -679,16 +698,22 @@ function alerte($num, $text)
             </form>
 
             <?php
-            include 'connectnp.php';
-            $bddnp=mysqli_connect(SERVER,USER,PASS,DB);
 
-            $resultatnp = mysqli_query($bddnp, 'SELECT * FROM commentaires WHERE note IS NOT NULL AND note <> "" AND valid_admin=1');
+            $resultatnp = mysqli_query($bdd, 'SELECT * FROM commentaires WHERE note IS NOT NULL AND note <> "" AND valid_admin=1');
 
             while($donneesnp = mysqli_fetch_assoc($resultatnp))
             {
                 echo $donneesnp['pseudo'].' '.$donneesnp['comment'].' '.$donneesnp['note'];
             }
             ?>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <!-- End Formulaire Experience -->
 
 		<!-- Footer -->

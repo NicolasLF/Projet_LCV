@@ -634,6 +634,63 @@ function alerte($num, $text)
 
 		<!-- End menu fixed right -->
 
+        <!-- Formulaire Experience -->
+            <form action="ciblenp.php" method="post">
+                <p>
+
+                <h3>PARTAGEZ VOTRE EXPERIENCE AVEC LE CAMELEON VOYAGEUR</h3>
+                <br />
+                <div class="form-group">
+                    <label>Pseudo</label>
+                    <input type="text" class="form-control" name="pseudo" placeholder="Indiquez votre Pseudo"/><br />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Votre adresse email"/><br />
+                </div>
+                <div class="form-group">
+                    <label for="comment"> Commentaires</label>
+                    <textarea class="form-control" rows="3" name="comment" id="comment"></textarea>
+                </div>
+                <br />
+                <h3>Quelle note donneriez vous à votre experience avec Le Caméléon Voyageur:<h3></h3><br />
+                <div>
+                    <input type="radio" name="note" value="0" id="0" /> <label for="0">0 = Euhhh y a t'il vraiment un cuisinier ? ... immangeable !!!</label><br />
+                </div>
+                <div>
+                    <input type="radio" name="note" value="1" id="1" /> <label for="1">1 = Alors ... j'ai mangé, mais pas deux fois !!</label><br />
+                </div>
+                <div>
+                    <input type="radio" name="note" value="2" id="2" /> <label for="2">2 = Mouaiiii ... on a vu mieux !</label><br />
+                </div>
+                <div>
+                    <input type="radio" name="note" value="3" id="3" /> <label for="3">3 = C'était bon ... </label><br />
+                </div>
+                <div>
+                    <input type="radio" name="note" value="4" id="4" /> <label for="4">4 = Je me suis régalé ...</label><br />
+                </div>
+                <div>
+                    <input type="radio" name="note" value="5" id="5" /> <label for="5">5 = Ce fût la meilleur expérience culinaire de ma vie ....</label><br />
+                </div>
+                <div>
+                    <input type="submit" value="Partager" />
+                </div>
+                </p>
+            </form>
+
+            <?php
+            include 'connectnp.php';
+            $bddnp=mysqli_connect(SERVER,USER,PASS,DB);
+
+            $resultatnp = mysqli_query($bddnp, 'SELECT * FROM commentaires WHERE note IS NOT NULL AND note <> "" AND valid_admin=1');
+
+            while($donneesnp = mysqli_fetch_assoc($resultatnp))
+            {
+                echo $donneesnp['pseudo'].' '.$donneesnp['comment'].' '.$donneesnp['note'];
+            }
+            ?>
+        <!-- End Formulaire Experience -->
+
 		<!-- Footer -->
 
 			<footer>

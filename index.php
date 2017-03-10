@@ -156,8 +156,8 @@ function alerte($num, $text)
 					<div class="col-xs-12 ">
 						<div class="fond-header">
 							<h1>LE CAMELEON VOYAGEUR</h1>
-							<h2 class="titre2photo">American & Korean Food Truck<br>
-							Région Orléanaise</h2>
+							<h2 class="titre2photo">AMERICAN & KOREN FOOD TRUCK<br>
+							REGION ORLEANAISE</h2>
 							<h3 class="telheader">06 69 15 43 08</h3>
 							<div class="telheaderxs">
 								<button type="button" class="visible-xs-block btn btn-default btn-circle">
@@ -188,7 +188,7 @@ function alerte($num, $text)
 						<div class="content formule ">
 							<h2>Formule <br />
 							La faim de la route <br /></h2>
-				     		<p>Bagel ou Kimpab + boisson<br /></p>
+				     		<p>BAGEL OU KIMPAB + BOISSON<br /></p>
 					     		<div class="prix-formule">
 					     			<p><big>7,60€</big></p>
 								</div>
@@ -198,7 +198,7 @@ function alerte($num, $text)
 						<div class="content formule ">
 							<h2>Formule <br />
 							La faim du voyage <br /></h2>
-					     	<p>Bagel + petite salade ou chips + boisson<br /></p>
+					     	<p>BAGEL + PETITE SALADE OU CHIPS + BOISSON<br /></p>
 					     		<div class="prix-formule">
 					     			<p><big> 8,60€</big></p>
 					     		</div>
@@ -208,7 +208,7 @@ function alerte($num, $text)
 						<div class="content formule ">
 							<h2>Formule <br />
 							Une faim de loup <br /></h2>
-				     		<p>Bagel + dessert + boisson<br /></p>
+				     		<p>BAGEL + DESSERT + BOISSON<br /></p>
 				     			<div class="prix-formule">
 				     				<p><big> 10€</big></p>
 						    	</div>
@@ -218,7 +218,7 @@ function alerte($num, $text)
 						<div class="content formule ">	
 							<h2>Formule <br />
 							La faim du monde <br /></h2>
-				     		<p>Bagel + petite salade ou chips + dessert + boisson<br /></p>
+				     		<p>BAGEL + PETITE SALADE OU CHIPS + DESSERT + BOISSON<br /></p>
 					     		<div class="prix-formule">
 						     		<p><big> 11,50€</big></p>
 						     	</div>		
@@ -249,7 +249,7 @@ function alerte($num, $text)
 			     				<div class="carousel-content formulecarousel">
 			     					<h2>Formule <br />
 									La faim de la route <br /></h2>
-			     					<p>Bagel ou Kimpab + boisson<br />
+			     					<p>BAGEL OU KIMPAB + BOISSON<br />
 			     					<big><span class="prixformule">7,60€</span></big></p>
 			      				</div>
 			    			</div>
@@ -257,7 +257,7 @@ function alerte($num, $text)
 			      				<div class="carousel-content formulecarousel">
 			     					<h2>Formule <br />
 									La faim du voyage <br /></h2>
-				     				<p>Bagel + petite salade ou chips + boisson<br />
+				     				<p>BAGEL + PETITE SALADE OU CHIPS + BOISSON<br />
 				     				<big> 8,60€</big></p>
 				   				</div>
 				   			</div>	
@@ -265,7 +265,7 @@ function alerte($num, $text)
 			      				<div class="carousel-content formulecarousel">
 			     					<h2>Formule <br />
 									Une faim de loup <br /></h2>
-			     					<p>Bagel + dessert + boisson<br />
+			     					<p>BAGEL + DESSERT + BOISSON<br />
 			     					<big> 10€</big></p>
 				   				</div>
 				   			</div>
@@ -273,7 +273,7 @@ function alerte($num, $text)
 			      				<div class="carousel-content formulecarousel">
 			      					<h2>Formule <br />
 									La faim du monde <br /></h2>
-			     					<p>Bagel + petite salade ou chips + dessert + boisson<br />
+			     					<p>BAGEL + PETITE SALADE OU CHIPS + DESSERT + BOISSON<br />
 			     					<big> 11,50€</big></p>
 				      			</div>	
 				   			</div>
@@ -430,35 +430,35 @@ function alerte($num, $text)
 						<h2> Rolls, salades & Co</h2>
 						<div class="container-fluid">			
 							<div class="row">
-								<div class="col-xs-9 carte">
+								<div class="col-xs-9 details">
 								  	<p>Chicken Rolls <small>(poulet teriyaki, avocat, concombre)</small></p>
 								</div>
 								  	<div class="col-xs-3 prix"><p>4,50€</p></div>  	
-								<div class="col-xs-9 carte">
+								<div class="col-xs-9 details">
 								  	<p>Thon thon Rolls <small>(thonade, avocat, concombre)</small></p>
 								</div>			
 								  	<div class="col-xs-3 prix"><p>5,00€</p></div>
-								<div class="col-xs-9 carte">
+								<div class="col-xs-9 details">
 								  	<p>Rock'n'rolls <small>(saumon, avocat, concombre)</small></p>
 								</div>
 								  	<div class="col-xs-3 prix"><p>6,60€</p></div>  	
-								<div class="col-xs-9 carte">
+								<div class="col-xs-9 details">
 									<p>Kimbap <small>(thonade, carotte, concombre, oeuf, radis)</small></p>
 								</div>
 									<div class="col-xs-3 prix"><p>2,50€</p></div>  	
-								<div class="col-xs-9 carte">
-									<p>Mandu <small>(ravioli coréen)</small> X6</p>
+								<div class="col-xs-9 details">
+									<p>Mandu <small>(ravioli coreen)</small> X6</p>
 								</div>
 									<div class="col-xs-3 prix"><p>2,00€</p></div>  	
-								<div class="col-xs-9 carte">
+								<div class="col-xs-9 details">
 									<p>Petite salade <small>(coleslaw, grecque)</small><span class="glyphicon glyphicon-leaf"></span></p>
 								</div>
 										<div class="col-xs-3 prix"><p>2,00€</p></div>  	
-								<div class="col-xs-9 carte">
+								<div class="col-xs-9 details">
 									<p>Grande salade <small>(coleslaw, grecque)</small><span class="glyphicon glyphicon-leaf"></span></p>
 								</div>
 									<div class="col-xs-3 prix"><p>4,00€</p></div>  	
-								<div class="col-xs-9 carte">
+								<div class="col-xs-9 details">
 									<p>Chips</p>
 								</div>	
 									<div class="col-xs-3 prix"><p>1,50€</p></div>
@@ -469,18 +469,18 @@ function alerte($num, $text)
 						<h2>Desserts</h2>
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col-xs-9 carte">
+								<div class="col-xs-9 details">
 									<p>Cheesecake maison</p>
 								</div>
 								<div class="col-xs-3 prix"><p>3,50€</p>
 								</div>
-								<div class="col-xs-9 carte">
-									<p>Muffin (blueberry, pépites de chocolat)</p>
+								<div class="col-xs-9 details">
+									<p>Muffin (blueberry, pepites de chocolat)</p>
 								</div>
 								<div class="col-xs-3 prix"><p>2,70€</p>
 								</div>
-								<div class="col-xs-9 carte">
-									<p>Cookies (pépites de chocolat, tout chocolat)</p>	
+								<div class="col-xs-9 details">
+									<p>Cookies (pepites de chocolat, tout chocolat)</p>
 								</div>
 								<div class="col-xs-3 prix"><p>2,50€</p>
 								</div>
@@ -489,12 +489,12 @@ function alerte($num, $text)
 						<h2>Boissons</h2>
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col-xs-9 carte">
+								<div class="col-xs-9 details">
 									<p>Sodas 33 cl, eau 50 cl</p>
 									</div>
 								<div class="col-xs-3 prix"><p>1,50€</p>
 								</div>
-								<div class="col-xs-9 carte">	
+								<div class="col-xs-9 details">
 									<p>Expresso</p>
 								</div>
 								<div class="col-xs-3 prix"><p>1,50€</p>
@@ -519,7 +519,7 @@ function alerte($num, $text)
 
 			<section>
 				<div>
-					<iframe width="100%" height="300px" frameBorder="0" src="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_130257?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p><a href="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_130257">Voir en plein écran</a></p>
+					<iframe width="100%" height="300px" frameBorder="0" src="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_130257?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p><a href="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_130257">VOIR EN PLEIN ECRAN</a></p>
 				</div>
 			</section>
 
@@ -534,7 +534,7 @@ function alerte($num, $text)
 
 			<section class="container-fluid">
 				<div class="row">
-					<div class="col-lg-6 col-md-6 col-xs-12  concept">
+					<div class="col-lg-6 col-md-6 col-xs-12 concept">
 						<p class="text-concept">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 						</p>
@@ -742,7 +742,7 @@ function alerte($num, $text)
 								<button type="button" class="btn btn-default btn-circle">
 									<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
 								</button>
-								<span><a href="tel:+0669154308">0669154308 </a></span>
+								<span style="color:black"><a href="tel:+0669154308">0669154308 </a></span>
 							</div>
 						</div>
 						<div class="contact">
@@ -756,22 +756,22 @@ function alerte($num, $text)
                         <div class="newsletter">
                             <form class="form-inline" method="POST" action="index.php">
                                 <div class="form-group">
-                                    <label for="nom">Nom</label>
+                                    <label for="nom">NOM</label>
                                     <input type="text" class="form-control" value="" id="nom" name="nom">
                                 </div><br />
                                 <div class="form-group">
-                                    <label for="prenom">Prénom</label>
+                                    <label for="prenom">PRENOM</label>
                                     <input type="text" class="form-control" value="" id="prenom" name="prenom">
                                 </div><br />
                                 <div class="form-group">
-                                    <label for="date_naissance">Né(e) le :</label>
+                                    <label for="date_naissance">NE(E) LE :</label>
                                     <input type="date" class="form-control" value="" id="date_naissance" name="date_naissance"/>
                                 </div><br />
                                 <div class="form-group">
-                                    <label for="exampleInputEmail2">Email</label>
+                                    <label for="exampleInputEmail2">EMAIL</label>
                                     <input type="email" class="form-control" value="" id="email" name="email">
                                 </div><br />
-                                <input type="submit" name="btnSubmit" value="Je m'abonne à la newsletter" class="btn btn-default"> </input>
+                                <input type="submit" name="btnSubmit" value="Je m'abonne" class="btn btn-default"> </input>
                             </form>
                         </div>
                         <?php
@@ -796,13 +796,13 @@ function alerte($num, $text)
 						<h3>HORAIRES ET LIEU</h3>
 						<div>
 							<ul class="list-group">
-							  <li class="list-group-item">Lundi<span class="pull-right">Lab'o - de 11H30 à 13H30</span></li>
-							  <li class="list-group-item">Mardi<span class="pull-right">Lab'o - de 11H30 à 13H30</span></li>
-							  <li class="list-group-item">Mercredi<span class="pull-right">Polytech - de 11H30 à 13H30</span></li>
-							  <li class="list-group-item">Jeudi<span class="pull-right">Polytech - de 11H30 à 13H30</span></li>
-							  <li class="list-group-item">Vendredi<span class="pull-right">ZAC des Aulnay - de 11H30 à 13H30</span></li>
-							  <li class="list-group-item">Samedi<span class="pull-right">Fermé</span></li>
-							  <li class="list-group-item">Dimanche<span class="pull-right">Fermé</span></li>
+							  <li class="list-group-item">Lundi<span class="pull-right">Lab'o - 11H30 - 13H30</span></li>
+							  <li class="list-group-item">Mardi<span class="pull-right">Lab'o - 11H30 - 13H30</span></li>
+							  <li class="list-group-item">Mercredi<span class="pull-right">Polytech - 11H30 - 13H30</span></li>
+							  <li class="list-group-item">Jeudi<span class="pull-right">Polytech - 11H30 - 13H30</span></li>
+							  <li class="list-group-item">Vendredi<span class="pull-right">ZAC des Aulnay - 11H30 - 13H30</span></li>
+							  <li class="list-group-item">Samedi<span class="pull-right">FERME</span></li>
+							  <li class="list-group-item">Dimanche<span class="pull-right">FERME</span></li>
 							</ul>
 						</div>
 						<div id="fb-root">
@@ -815,13 +815,13 @@ function alerte($num, $text)
 
 		<!-- Modal pour les Mentions Légales -->
 
-							<a class="boutons-bas-footer" href="#" data-toggle="modal" data-target="#modalMentions">Mentions Légales     |     </a>
+							<a class="boutons-bas-footer" href="#" data-toggle="modal" data-target="#modalMentions">MENTIONS LEGALES     |     </a>
 							<div class="modal fade" id="modalMentions" tabindex="-1" role="dialog">
 							  <div class="modal-dialog" role="document">
 							    <div class="modal-content">
 							      <div class="modal-header">
 							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							        <h4 class="modal-title">Mentions Légales</h4>
+							        <h4 class="modal-title">Mentions légales</h4>
 							      </div>
 							      <div class="modal-body">
 							        <p>
@@ -850,7 +850,7 @@ function alerte($num, $text)
 
 		<!-- Modal pour les moyens de paiements -->
 
-							<a class="boutons-bas-footer" href="#" data-toggle="modal" data-target="#modalPaiements">Modes de paiement      |</a>
+							<a class="boutons-bas-footer" href="#" data-toggle="modal" data-target="#modalPaiements">MODES DE PAIEMENT     |</a>
 							<div class="modal fade" id="modalPaiements" tabindex="-1" role="dialog">
 							  <div class="modal-dialog" role="document">
 							    <div class="modal-content">

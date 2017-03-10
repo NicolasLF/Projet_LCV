@@ -749,9 +749,52 @@ function alerte($num, $text)
 							
 							<h2>FOOD TRUCK TRAITEUR TOUS EVENEMENTS</h2>
 						</div>
-						
 
-					</div>
+
+                        <!-- Formulaire Newsletter -->
+
+                        <div class="newsletter">
+                            <form class="form-inline" method="POST" action="index.php">
+                                <div class="form-group">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" class="form-control" value="" id="nom" name="nom">
+                                </div><br />
+                                <div class="form-group">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" class="form-control" value="" id="prenom" name="prenom">
+                                </div><br />
+                                <div class="form-group">
+                                    <label for="date_naissance">Né(e) le :</label>
+                                    <input type="date" class="form-control" value="" id="date_naissance" name="date_naissance"/>
+                                </div><br />
+                                <div class="form-group">
+                                    <label for="exampleInputEmail2">Email</label>
+                                    <input type="email" class="form-control" value="" id="email" name="email">
+                                </div><br />
+                                <input type="submit" name="btnSubmit" value="Je m'abonne à la newsletter" class="btn btn-default"> </input>
+                            </form>
+                        </div>
+                        <?php
+
+                        include 'connectsp.php';
+                        include 'header.php';
+                        $bdd = mysqli_connect(SERVER, USER, PASS, DB);
+                        if (isset($_POST['btnSubmit'])) {
+                            $nom = $_POST['nom'];
+                            $prenom = $_POST['prenom'];
+                            $date_naissance = $_POST['date_naissance'];
+                            $email = $_POST['email'];
+
+                            $req = "INSERT INTO abonnes (nom, prenom, date_naissance, email) VALUES ('$nom', '$prenom', '$date_naissance', '$email')";
+                            if(!mysqli_query($bdd, $req)) {
+                                echo mysqli_error($bdd);
+                            }
+                        }
+                        ?>
+                        <!-- Fin Formulaire Newsletter -->
+
+
+                    </div>
 					<div class="col-sm-6 info-footer">
 						<h3>HORAIRES ET LIEU</h3>
 						<div>
@@ -851,7 +894,6 @@ function alerte($num, $text)
 							    </div>
 							  </div>
 							</div>
-						</div>
 					</div>
 				</div>
 				<

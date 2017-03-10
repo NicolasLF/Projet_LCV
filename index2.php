@@ -4,7 +4,7 @@
 		<title></title>
 		<meta description="" />
 		 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		 <link rel="stylesheet" type="text/css" href="LCV.css">
+		 <link rel="stylesheet" type="text/css" href="css/LCV.css">
 		 <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
 		 <meta charset="utf-8">
 	</head>
@@ -434,7 +434,7 @@
 
 			<div id="concept" class="separate-container">
 				<div class="separate"></div>
-				<span class="titres-sections">QUI SOMMES NOUS ?</span>
+				<span class="titres-sections">QUI SOMMES-NOUS ?</span>
 			</div>
 
 			<section class="container-fluid">
@@ -632,7 +632,7 @@
 							</div>
 
 		<!-- Modal pour les moyens de paiements -->
-		
+
 							<a class="boutons-bas-footer" href="#" data-toggle="modal" data-target="#modalPaiements">Modes de paiement      |</a>
 							<div class="modal fade" id="modalPaiements" tabindex="-1" role="dialog">
 							  <div class="modal-dialog" role="document">

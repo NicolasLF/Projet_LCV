@@ -486,3 +486,18 @@ footer h3{
     bottom: 20px;
     right: 20px;
 }
+.jumbotron {
+    padding: 10px!important;
+    margin-bottom: 5px;
+}
+.btnsmblock{
+    margin-bottom: 20px;
+}
+.btn-primary{
+    background-color: #ff831d!important;
+    border-color: #aa550f!important;
+}
+.btn-primary:hover {
+    background-color: #aa550f!important;
+    border-color: #aa550f!important;
+}

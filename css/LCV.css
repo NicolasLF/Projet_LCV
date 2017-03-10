@@ -430,18 +430,54 @@ footer h3{
 .form-bagel .form-group {
 	margin-bottom: 1px!important;
 }
+.flatRoundedCheckbox
+{
+	width: 90px;
+	height: 30px;
+	margin-top: 10px;
+	position: relative;
+}
+.flatRoundedCheckbox div
+{
+	width: 100%;
+	height:100%;
+	background: #d3d3d3;
+	border-radius: 50px;
+	position: relative;
+	top:-30px;
+}
+.flatRoundedCheckbox label
+{
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50px;
 
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
 
+	cursor: pointer;
+	position: absolute;
+	top: 0px;
+	z-index: 1;
+	left: 8px;
+	background: #FFF;
+}
 
+.flatRoundedCheckbox input[type=checkbox]:checked ~ div
+{
+	background: #ff831d;
+}
 
+.flatRoundedCheckbox input[type=checkbox]:checked ~ label {
+	left: 60px;
+}
 
-
-
-
-
-
-
-
-
-
-
+.form-bagel div span{
+    font-family: 'plaza';
+    font-size: 20px;
+    font-weight: 600;
+}

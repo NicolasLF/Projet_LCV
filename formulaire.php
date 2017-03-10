@@ -9,7 +9,7 @@
             ?>
         </div>
 
-        <form class="form-horizontal form-bagel" method="POST" action="index.php?commande=success">
+        <form class="form-horizontal form-bagel" method="POST" action="index.php#bagelsm?commande=success">
             <div class="col-sm-6">
                 <?php
                 while ($donnees = mysqli_fetch_assoc($resultat)) {
@@ -17,14 +17,20 @@
                     $nom = $donnees['nom'];
                     $prix = $donnees['prix'];
                     $src = $donnees['img'];
-                    echo '   
-    <div class="checkbox">
-        <label for="ingredient">
-            <input name="ingredient' . $id . '" type="checkbox" alt="2" class="check" value="' . $id . '" onclick="totalIt()">
+                    $nblignes = count($donnees) / 2;
+
+
+                            echo '   
+   <div class="col-xs-6">
+    <span>' . $donnees['nom'] . ' ' . $donnees['prix'] . ' €</span>
+    <div class="flatRoundedCheckbox">
+            <input id="flatOneRoundedCheckbox' . $id . '" name="ingredient' . $id . '" type="checkbox" alt="2" class="check" value="' . $id . '" onclick="totalIt()">
             <input type="hidden" class="id" value="' . $prix . '">
-            ' . $nom . ' ' . $prix . ' € 
-        </label>
+            <label for="flatOneRoundedCheckbox' . $id . '"></label>
+            <div></div>
+    </div>
     </div>';
+
 
                 } ?>
             </div>
@@ -33,7 +39,8 @@
 
                 <?php if (isset($_SESSION['pseudo'])) {
                     echo '
-        <div>Vous commandez en tant que ' . $_SESSION ['prenom'] . ' ' . $_SESSION ['nom'] . '</div>
+
+    <label >Vous commandez en tant que ' . $_SESSION ['prenom'] . ' ' . $_SESSION ['nom'] . ' <a href="déconnexion.php" class="btn btn-default">déconnexion</a></label>
     <input type="hidden" name="nom" value="' . $_SESSION ['prenom'] . '">
     <input type="hidden" name="prenom" value="' . $_SESSION ['nom'] . '">
     <input type="hidden" name="mail" value="' . $_SESSION ['mail'] . '">
@@ -42,34 +49,36 @@
                 } else {
 
                     echo '
-        <div>Vous commandez en tant qu\'invité ;)</div>
+<label>Vous commandez en tant qu\'invité ;) Pour vous connecter, <a href="formulaire_membre.php" class="btn btn-default">connectez-vous</a></label>
         <div class="form-group">
             <label for="nom">Nom</label>
-            <input type="text" name="nom" class="form-control">
+            <input type="text" name="nom" class="form-control" required>
         </div>
         <div class="form-group">
             <label for="prenom">Prenom</label>
-            <input type="text" name="prenom" class="form-control">
+            <input type="text" name="prenom" class="form-control" required>
         </div>
         <div class="form-group">
                 <label for="mail">Mail</label>
-                <input type="text" name="mail" class="form-control">
+                <input type="text" name="mail" class="form-control" required>
         </div>
         <div class="form-group">
                 <label for="tel">Téléphone</label>
-                <input type="text" name="tel" class="form-control" value="">
+                <input type="text" name="tel" class="form-control" value="" required>
         </div>
         ';
                 }
                 ?>
 
+                <div class="form-group">
+                    <input type="hidden" name="idcommande" value="">
+                    <button type="submit" class="btn btn-default" name="envoyer">Commander !</button>
+                    <label>
+                        Total
+                        <input value="$0.00" readonly="readonly" type="text" id="total"/>
+                    </label>
+                </div>
 
-                <input type="hidden" name="idcommande" value="">
-                <input type="submit" name="envoyer">
-                <label>
-                    Total
-                    <input value="$0.00" readonly="readonly" type="text" id="total"/>
-                </label>
             </div>
         </form>
 

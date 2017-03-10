@@ -14,6 +14,7 @@ include 'function.php';
 $req = "SELECT * FROM ingredient";
 $resultat = mysqli_query($bdd, $req);
 $resultat2 = mysqli_query($bdd, $req);
+$resultat3 = mysqli_query($bdd, $req);
 
 $today = date("Y-m-d H:i:s");
 
@@ -42,9 +43,14 @@ if (isset($_POST['envoyer'])) {
     // $row[0]
     while ($donnees = mysqli_fetch_assoc($resultat2)) {
         $idingr = $donnees['id'];
+        $qtenews = intval($donnees['qte']) -1;
+
         if (isset($_POST['ingredient' . $idingr])) {
             $idingredient = $_POST['ingredient' . $idingr];
+
+
             mysqli_query($bdd, "INSERT INTO ingredient_has_commande VALUES ($idingredient,$lastid)");
+            mysqli_query($bdd, "UPDATE ingredient SET qte = $qtenews WHERE id = $idingredient ");
         }
 
     }
@@ -138,6 +144,7 @@ function alerte($num, $text)
 					        <li><a class="js-scrollTo" href="#concept">Notre Concept</a></li>
 					        <li><a class="js-scrollTo" href="#formules">Nos Formules</a></li>
 					        <li><a class="js-scrollTo" href="#bagels">Nos Bagels</a></li>
+					        <li><a class="js-scrollTo" href="#bagelsm">Sur-Mesure</a></li>
 					        <li><a class="js-scrollTo" href="#menus">Nos Menus</a></li>
 					        <li><a class="js-scrollTo" href="#ou">Où nous trouver</a></li>
 					      </ul>
@@ -393,15 +400,20 @@ function alerte($num, $text)
 			</section>
 
 		<!-- End Bagels -->
-            <div id="menus" class="separate-container">
+            <div id="bagelsm" class="separate-container">
                 <div class="separate"></div>
                 <span class="titres-sections">BAGEL SUR MESURE</span>
             </div>
-            <section class="container-fluid">
-
+            <section class="container-fluid text-center">
+                <button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapseSurMesure" aria-expanded="false" aria-controls="collapseSurMesure">
+                    Je commande mon bagel sur-mesure
+                </button>
+                <div class="collapse" id="collapseSurMesure">
+                    <div class="well">
 
                         <?php include 'formulaire.php';?>
-
+                    </div>
+                </div>
 
             </section>
 

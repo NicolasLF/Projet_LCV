@@ -87,7 +87,7 @@ $ingredientCount = mysqli_query($bdd,$req4);
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            BONJOUR <?php echo $_SESSION['pseudo'];?>
+            BONJOUR <?php if(isset($_SESSION['pseudo'])){echo $_SESSION['pseudo'];}?>
         </div>
         <div class="col-xs-12">
             <?php
@@ -112,7 +112,7 @@ $ingredientCount = mysqli_query($bdd,$req4);
                aria-expanded="false" aria-controls="collapseExample">
                 Ajouter un ingredient
             </a>
-            <div class="collapse" id="collapseExample">
+            <div class="col-xs-12 collapse coling" id="collapseExample">
                 <form class="form-group" method="POST" action="backOffice.php">
                     <input type="text" name="nom" value="" placeholder="Nom de l'ingredient">
                     <input type="text" name="prix" size="3" value="" placeholder="€">
@@ -292,7 +292,7 @@ $ingredientCount = mysqli_query($bdd,$req4);
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                         
                           </div>
                         </div>
                       </div>

@@ -57,21 +57,21 @@ function alerte($num, $text)
                 </div>
                 <div class="form-group">
                     <label for="nom">Nom</label>
-                    <input type="nom" name="nom" class="form-control" id="name" placeholder="nom">
+                    <input type="text" name="nom" class="form-control" id="name" placeholder="nom">
                 </div>
                 <div class="form-group">
                     <label for="prenom">Prenom</label>
-                    <input type="prenom" name="prenom" class="form-control" id="prenom" placeholder="Prenom">
+                    <input type="text" name="prenom" class="form-control" id="prenom" placeholder="Prenom">
                 </div>
                 <div class="form-group">
                     <label for="mail">Mail</label>
-                    <input type="mail" name="mail" class="form-control" id="mail" placeholder="E-mail">
+                    <input type="email" name="mail" class="form-control" id="mail" placeholder="E-mail">
                 </div>
                 <div class="form-group">
                     <label for="tel">Téléphone</label>
                     <input type="tel" name="tel" class="form-control" id="tel" placeholder="tel">
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default">Valider</button>
             </form>
         </div>
         <div class="col-sm-6">
@@ -85,13 +85,12 @@ function alerte($num, $text)
                     <label for="password_ins">Password</label>
                     <input type="password" name="password_ins" class="form-control" id="password_ins" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default">Valider</button>
             </form>
         </div>
     </div>
 </div>
 <?php
-var_dump($_SESSION);
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
